@@ -12,7 +12,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @ExtendWith(MockitoExtension.class)
-class SpringBootStarterApplicationTests {
+class ECommerceApplicationTests {
 
   @Mock private transient ConfigurableApplicationContext context;
 
@@ -25,7 +25,7 @@ class SpringBootStarterApplicationTests {
 
   @Test
   void testClassConstructor() {
-    Assertions.assertDoesNotThrow(SpringBootStarterApplication::new);
+    Assertions.assertDoesNotThrow(ECommerceApplication::new);
   }
 
   /** Test the main method with mocked application context. */
@@ -33,12 +33,12 @@ class SpringBootStarterApplicationTests {
   void contextLoads() {
     try (var mockStatic = Mockito.mockStatic(SpringApplication.class)) {
       mockStatic
-          .when(() -> context = SpringApplication.run(SpringBootStarterApplication.class))
+          .when(() -> context = SpringApplication.run(ECommerceApplication.class))
           .thenReturn(context);
 
-      SpringBootStarterApplication.main(new String[] {});
+      ECommerceApplication.main(new String[] {});
 
-      mockStatic.verify(() -> context = SpringApplication.run(SpringBootStarterApplication.class));
+      mockStatic.verify(() -> context = SpringApplication.run(ECommerceApplication.class));
     }
   }
 }

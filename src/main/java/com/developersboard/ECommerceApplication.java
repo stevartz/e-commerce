@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @EnableScheduling
 @SpringBootApplication
-public class SpringBootStarterApplication {
+public class ECommerceApplication {
 
   /**
    * The application's entry point.
@@ -21,6 +21,6 @@ public class SpringBootStarterApplication {
    * @param args an array of command-line arguments for the application
    */
   public static void main(String[] args) {
-    SpringApplication.run(SpringBootStarterApplication.class, args);
+    SpringApplication.run(ECommerceApplication.class, args);
   }
 }
