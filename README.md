@@ -5,9 +5,9 @@
 *** Happy Coding!
 -->
 
-# Spring Boot Starter
+# E-Commerce
 
-A highly opinionated and complete starter for Spring Boot production ready projects.
+This is a springboot project for an e-commerce website.
 
 ## Running Instance on Heroku
 
@@ -117,10 +117,8 @@ TBD
 
 * **Eric Opoku** - *Initial work*
 * **George Anguah** - *Initial work*
-* **Matthew Puentes** - *Initial work*
-* **Stephen Boakye** - *Contributor*
-* **Charles Dimbeng** - *Contributor*
-* **Simon Kodua** - *Contributor*
+* **Stephen Boakye** - *Initial work*
+
 
 ## Acknowledgments
 
