@@ -33,7 +33,7 @@ cors.allowed-origins=${CORS_ALLOWED_ORIGINS:http://localhost:3000/, http://local
 The bean responsible for the CORS configuration is:
 
 ```
-com.developersboard.config.security.SecurityBean;
+com.upsidle.config.security.SecurityBean;
 
 /**
    * Configures cors for all requests towards the API.

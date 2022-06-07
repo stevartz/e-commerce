@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.web.rest.v1, class: UserRestApi">
+<meta name="description" content="declaration: package: com.upsidle.web.rest.v1, class: UserRestApi">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,17 +68,17 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.web.rest.v1</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.web.rest.v1</a></div>
 <h1 title="Class UserRestApi" class="title">Class UserRestApi</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.developersboard.web.rest.v1.UserRestApi</div>
+<div class="inheritance">com.upsidle.web.rest.v1.UserRestApi</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="annotations">@RestController
 @RequestMapping("/api/v1/users")
-@PreAuthorize("hasRole(T(com.developersboard.enums.RoleType).ROLE_ADMIN)")
+@PreAuthorize("hasRole(T(com.upsidle.enums.RoleType).ROLE_ADMIN)")
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">UserRestApi</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">This class handles all rest calls for users.</div>
@@ -113,12 +113,12 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.developersboard.enums">OperationStatus</a>&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.upsidle.enums">OperationStatus</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#disableUser(java.lang.String)" class="member-name-link">disableUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;publicId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Disables the user associated with the publicId.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.developersboard.enums">OperationStatus</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.upsidle.enums">OperationStatus</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableUser(java.lang.String)" class="member-name-link">enableUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;publicId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enables the user associated with the publicId.</div>
@@ -158,7 +158,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="enableUser(java.lang.String)">
 <h3>enableUser</h3>
 <div class="member-signature"><span class="annotations">@PutMapping("/{publicId}/enable")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.developersboard.enums">OperationStatus</a>&gt;</span>&nbsp;<span class="element-name">enableUser</span><wbr><span class="parameters">(@PathVariable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.upsidle.enums">OperationStatus</a>&gt;</span>&nbsp;<span class="element-name">enableUser</span><wbr><span class="parameters">(@PathVariable
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;publicId)</span></div>
 <div class="block">Enables the user associated with the publicId.</div>
 <dl class="notes">
@@ -173,7 +173,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="disableUser(java.lang.String)">
 <h3>disableUser</h3>
 <div class="member-signature"><span class="annotations">@PutMapping("/{publicId}/disable")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.developersboard.enums">OperationStatus</a>&gt;</span>&nbsp;<span class="element-name">disableUser</span><wbr><span class="parameters">(@PathVariable
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;<a href="../../../enums/OperationStatus.html" title="enum class in com.upsidle.enums">OperationStatus</a>&gt;</span>&nbsp;<span class="element-name">disableUser</span><wbr><span class="parameters">(@PathVariable
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;publicId)</span></div>
 <div class="block">Disables the user associated with the publicId.</div>
 <dl class="notes">

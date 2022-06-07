@@ -1,6 +1,6 @@
 
 The Open API Specification (OAS) is a [JSON Schema](https://json-schema.org/).
-Configuration can be found [here](/src/main/java/com/developersboard/config/OpenApi30Config.java)
+Configuration can be found [here](/src/main/java/com/upsidle/config/OpenApi30Config.java)
 
 * Access OpenAPI Specification: - **http://localhost:8080/v3/api-docs**
 * Access Swagger UI - **http://localhost:8080/swagger-ui/index.html**

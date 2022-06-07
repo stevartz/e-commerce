@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.web.rest.v1, class: AuthRestApi">
+<meta name="description" content="declaration: package: com.upsidle.web.rest.v1, class: AuthRestApi">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,11 +68,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.web.rest.v1</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.web.rest.v1</a></div>
 <h1 title="Class AuthRestApi" class="title">Class AuthRestApi</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.developersboard.web.rest.v1.AuthRestApi</div>
+<div class="inheritance">com.upsidle.web.rest.v1.AuthRestApi</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -113,19 +113,19 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;com.developersboard.web.payload.response.JwtResponseBuilder&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;com.upsidle.web.payload.response.JwtResponseBuilder&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#authenticateUser(java.lang.String,com.developersboard.web.payload.request.LoginRequest)" class="member-name-link">authenticateUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;refreshToken,
- @Valid com.developersboard.web.payload.request.LoginRequest&nbsp;loginRequest)</code></div>
+ @Valid com.upsidle.web.payload.request.LoginRequest&nbsp;loginRequest)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Attempts to authenticate with the provided credentials.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;com.developersboard.web.payload.response.LogoutResponse&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;com.upsidle.web.payload.response.LogoutResponse&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)" class="member-name-link">logout</a><wbr>(javax.servlet.http.HttpServletRequest&nbsp;request,
  javax.servlet.http.HttpServletResponse&nbsp;response)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Logout the user from the system and clear all cookies from request and response.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;com.developersboard.web.payload.response.JwtResponseBuilder&gt;</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.http.ResponseEntity&lt;com.upsidle.web.payload.response.JwtResponseBuilder&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#refreshToken(java.lang.String)" class="member-name-link">refreshToken</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;refreshToken)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Refreshes the current access token and refresh token accordingly.</div>
@@ -165,10 +165,10 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="authenticateUser(java.lang.String,com.developersboard.web.payload.request.LoginRequest)">
 <h3>authenticateUser</h3>
 <div class="member-signature"><span class="annotations">@PostMapping("/login")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;com.developersboard.web.payload.response.JwtResponseBuilder&gt;</span>&nbsp;<span class="element-name">authenticateUser</span><wbr><span class="parameters">(@CookieValue(required=false)
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;com.upsidle.web.payload.response.JwtResponseBuilder&gt;</span>&nbsp;<span class="element-name">authenticateUser</span><wbr><span class="parameters">(@CookieValue(required=false)
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;refreshToken,
  @Valid @RequestBody
- @Valid com.developersboard.web.payload.request.LoginRequest&nbsp;loginRequest)</span></div>
+ @Valid com.upsidle.web.payload.request.LoginRequest&nbsp;loginRequest)</span></div>
 <div class="block">Attempts to authenticate with the provided credentials. If successful, a JWT token is returned
  with some user details.
 
@@ -186,7 +186,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="refreshToken(java.lang.String)">
 <h3>refreshToken</h3>
 <div class="member-signature"><span class="annotations">@GetMapping("/refresh-token")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;com.developersboard.web.payload.response.JwtResponseBuilder&gt;</span>&nbsp;<span class="element-name">refreshToken</span><wbr><span class="parameters">(@CookieValue
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;com.upsidle.web.payload.response.JwtResponseBuilder&gt;</span>&nbsp;<span class="element-name">refreshToken</span><wbr><span class="parameters">(@CookieValue
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;refreshToken)</span></div>
 <div class="block">Refreshes the current access token and refresh token accordingly.</div>
 <dl class="notes">
@@ -201,7 +201,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="logout(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)">
 <h3>logout</h3>
 <div class="member-signature"><span class="annotations">@DeleteMapping("/logout")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;com.developersboard.web.payload.response.LogoutResponse&gt;</span>&nbsp;<span class="element-name">logout</span><wbr><span class="parameters">(javax.servlet.http.HttpServletRequest&nbsp;request,
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.http.ResponseEntity&lt;com.upsidle.web.payload.response.LogoutResponse&gt;</span>&nbsp;<span class="element-name">logout</span><wbr><span class="parameters">(javax.servlet.http.HttpServletRequest&nbsp;request,
  javax.servlet.http.HttpServletResponse&nbsp;response)</span></div>
 <div class="block">Logout the user from the system and clear all cookies from request and response.</div>
 <dl class="notes">

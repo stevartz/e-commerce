@@ -47,5 +47,5 @@ As a result of that, the token alone can be used to authorize the user appropria
 
 ```bash
 # Pre-authorizing a user has admin role and not using a remember-me login can be done as such and should pass
-@PreAuthorize("isFullyAuthenticated() && hasRole(T(com.developersboard.enums.RoleType).ROLE_ADMIN)")
+@PreAuthorize("isFullyAuthenticated() && hasRole(T(com.upsidle.enums.RoleType).ROLE_ADMIN)")
 ```

@@ -8,6 +8,8 @@
 // style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 // test: Adding missing tests or correcting existing tests
 
+// Read more at https://github.com/conventional-changelog/commitlint
+
 module.exports = {
   extends: ["@commitlint/config-conventional"],
   rules: {

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.backend.service.security, interface: CookieService">
+<meta name="description" content="declaration: package: com.upsidle.backend.service.security, interface: CookieService">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,7 +68,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.backend.service.security</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.backend.service.security</a></div>
 <h1 title="Interface CookieService" class="title">Interface CookieService</h1>
 </div>
 <section class="class-description" id="class-description">
@@ -94,13 +94,13 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.springframework.http.HttpHeaders</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addCookieToHeaders(com.developersboard.enums.TokenType,java.lang.String)" class="member-name-link">addCookieToHeaders</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addCookieToHeaders(com.developersboard.enums.TokenType,java.lang.String)" class="member-name-link">addCookieToHeaders</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">creates a cookie with the specified token and jwtTokenType then adds it to headers.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.springframework.http.HttpHeaders</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addCookieToHeaders(com.developersboard.enums.TokenType,java.lang.String,java.time.Duration)" class="member-name-link">addCookieToHeaders</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addCookieToHeaders(com.developersboard.enums.TokenType,java.lang.String,java.time.Duration)" class="member-name-link">addCookieToHeaders</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -108,7 +108,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addCookieToHeaders(org.springframework.http.HttpHeaders,com.developersboard.enums.TokenType,java.lang.String,java.time.Duration)" class="member-name-link">addCookieToHeaders</a><wbr>(org.springframework.http.HttpHeaders&nbsp;httpHeaders,
- <a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+ <a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -116,7 +116,7 @@ loadScripts(document, 'script');</script>
  headers.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.springframework.http.HttpHeaders</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addDeletedCookieToHeaders(com.developersboard.enums.TokenType)" class="member-name-link">addDeletedCookieToHeaders</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addDeletedCookieToHeaders(com.developersboard.enums.TokenType)" class="member-name-link">addDeletedCookieToHeaders</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a cookie with the specified token.</div>
 </div>
@@ -134,19 +134,19 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.springframework.http.HttpCookie</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createTokenCookie(java.lang.String,com.developersboard.enums.TokenType)" class="member-name-link">createTokenCookie</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
- <a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType)</code></div>
+ <a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a cookie with the specified token and token type.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.springframework.http.HttpCookie</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#createTokenCookie(java.lang.String,com.developersboard.enums.TokenType,java.time.Duration)" class="member-name-link">createTokenCookie</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
- <a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+ <a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a cookie with the specified token and token type.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>org.springframework.http.HttpCookie</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteTokenCookie(com.developersboard.enums.TokenType)" class="member-name-link">deleteTokenCookie</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteTokenCookie(com.developersboard.enums.TokenType)" class="member-name-link">deleteTokenCookie</a><wbr>(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Creates a cookie with the specified token.</div>
 </div>
@@ -198,7 +198,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="createTokenCookie(java.lang.String,com.developersboard.enums.TokenType)">
 <h3>createTokenCookie</h3>
 <div class="member-signature"><span class="return-type">org.springframework.http.HttpCookie</span>&nbsp;<span class="element-name">createTokenCookie</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
- <a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType)</span></div>
+ <a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType)</span></div>
 <div class="block">Creates a cookie with the specified token and token type.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -213,7 +213,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="createTokenCookie(java.lang.String,com.developersboard.enums.TokenType,java.time.Duration)">
 <h3>createTokenCookie</h3>
 <div class="member-signature"><span class="return-type">org.springframework.http.HttpCookie</span>&nbsp;<span class="element-name">createTokenCookie</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
- <a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+ <a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</span></div>
 <div class="block">Creates a cookie with the specified token and token type.</div>
 <dl class="notes">
@@ -229,7 +229,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="deleteTokenCookie(com.developersboard.enums.TokenType)">
 <h3>deleteTokenCookie</h3>
-<div class="member-signature"><span class="return-type">org.springframework.http.HttpCookie</span>&nbsp;<span class="element-name">deleteTokenCookie</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType)</span></div>
+<div class="member-signature"><span class="return-type">org.springframework.http.HttpCookie</span>&nbsp;<span class="element-name">deleteTokenCookie</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType)</span></div>
 <div class="block">Creates a cookie with the specified token.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -242,7 +242,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addDeletedCookieToHeaders(com.developersboard.enums.TokenType)">
 <h3>addDeletedCookieToHeaders</h3>
-<div class="member-signature"><span class="return-type">org.springframework.http.HttpHeaders</span>&nbsp;<span class="element-name">addDeletedCookieToHeaders</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType)</span></div>
+<div class="member-signature"><span class="return-type">org.springframework.http.HttpHeaders</span>&nbsp;<span class="element-name">addDeletedCookieToHeaders</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType)</span></div>
 <div class="block">Creates a cookie with the specified token.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -255,7 +255,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addCookieToHeaders(com.developersboard.enums.TokenType,java.lang.String)">
 <h3>addCookieToHeaders</h3>
-<div class="member-signature"><span class="return-type">org.springframework.http.HttpHeaders</span>&nbsp;<span class="element-name">addCookieToHeaders</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+<div class="member-signature"><span class="return-type">org.springframework.http.HttpHeaders</span>&nbsp;<span class="element-name">addCookieToHeaders</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</span></div>
 <div class="block">creates a cookie with the specified token and jwtTokenType then adds it to headers.</div>
 <dl class="notes">
@@ -270,7 +270,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="addCookieToHeaders(com.developersboard.enums.TokenType,java.lang.String,java.time.Duration)">
 <h3>addCookieToHeaders</h3>
-<div class="member-signature"><span class="return-type">org.springframework.http.HttpHeaders</span>&nbsp;<span class="element-name">addCookieToHeaders</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+<div class="member-signature"><span class="return-type">org.springframework.http.HttpHeaders</span>&nbsp;<span class="element-name">addCookieToHeaders</span><wbr><span class="parameters">(<a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</span></div>
 <div class="block">creates a cookie with the specified token and jwtTokenType then adds it to headers.</div>
@@ -288,7 +288,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="addCookieToHeaders(org.springframework.http.HttpHeaders,com.developersboard.enums.TokenType,java.lang.String,java.time.Duration)">
 <h3>addCookieToHeaders</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addCookieToHeaders</span><wbr><span class="parameters">(org.springframework.http.HttpHeaders&nbsp;httpHeaders,
- <a href="../../../enums/TokenType.html" title="enum class in com.developersboard.enums">TokenType</a>&nbsp;jwtTokenType,
+ <a href="../../../enums/TokenType.html" title="enum class in com.upsidle.enums">TokenType</a>&nbsp;jwtTokenType,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Duration.html" title="class or interface in java.time" class="external-link">Duration</a>&nbsp;duration)</span></div>
 <div class="block">creates a cookie with the specified token and jwtTokenType with duration then adds it to the

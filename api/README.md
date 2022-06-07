@@ -5,13 +5,13 @@
 *** Happy Coding!
 -->
 
-# E-Commerce
+# Upsidle
 
 This is a springboot project for an e-commerce website.
 
 ## Running Instance on Heroku
 
-https://spring-boot-starter.herokuapp.com/
+TBD
 
 ![Java CI with Gradle](https://github.com/ericus20/spring-boot-starter/workflows/Java%20CI%20with%20Gradle/badge.svg)
 ![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
@@ -56,53 +56,9 @@ https://spring-boot-starter.herokuapp.com/
 - [Security Configuration Without WebSecurityConfigurerAdapter](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter#ldap-authentication)
 
 
-## Sample *ongoing* project using this template
-<!-- - [A Simple E-Commerce Application](https://github.com/ericus20/e-commerce) -->
-TBD
-
-
 
 ## Production Ready Folder Structure
-
-```bash
-.
-|-- documents
-|-- gradle
-|   `-- wrapper
-`-- src
-    |-- integration
-    |   |-- java
-    |   |   `-- com
-    |   |       `-- developersboard
-    |   |           |-- backend
-    |   |           `-- web
-    |   `-- resources
-    |-- main
-    |   |-- java
-    |   |   `-- com
-    |   |       `-- developersboard
-    |   |           |-- annotation  # All custom annotations used in the application
-    |   |           |-- backend     # Business Logic and Data Access implementation
-    |   |           |-- config      # Configuration classes and properties
-    |   |           |-- constant    # Constants used in the application
-    |   |           |-- enums       # Enums used in the application
-    |   |           |-- exception   # Custom exceptions used in the application
-    |   |           |-- shared      # Resources like dto, utils, etc. used in the application
-    |   |           `-- web         # Web layer implementation
-    |   `-- resources
-    |       `-- i18n                # I18n property files, comes with 'en', 'fr', 'es' and 'zn_CN'
-    `-- test
-        |-- java
-        |   `-- com
-        |       `-- developersboard
-        |           |-- backend
-        |           `-- web
-        `-- resources
-
-```
-
-Configuration properties required to deploy to Heroku:
-![img.png](documents/images/heroku-deploy-properties.png)
+TBD
 
 ## Contributing
 
@@ -118,6 +74,7 @@ TBD
 * **Eric Opoku** - *Initial work*
 * **George Anguah** - *Initial work*
 * **Stephen Boakye** - *Initial work*
+* **Matthew Puentes** - *Initial work*
 
 
 ## Acknowledgments
@@ -160,7 +117,7 @@ TBD
 
 *NB: Windows users must use **gradlew** instead of **./gradlew***
 
-* Start Spring Boot application using on linux/unix - **./gradlew bootRun**
+* Start api using on linux/unix - **./gradlew bootRun**
 * Run unit tests using - **./gradlew test**
 * Run integration tests using - **./gradlew integrationTest**
 * Run all tests using - **./gradlew testAll**

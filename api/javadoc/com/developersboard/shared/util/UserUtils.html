@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.shared.util, class: UserUtils">
+<meta name="description" content="declaration: package: com.upsidle.shared.util, class: UserUtils">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,11 +68,11 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.shared.util</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.shared.util</a></div>
 <h1 title="Class UserUtils" class="title">Class UserUtils</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.developersboard.shared.util.UserUtils</div>
+<div class="inheritance">com.upsidle.shared.util.UserUtils</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -114,55 +114,64 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUser(com.developersboard.shared.dto.UserDto)" class="member-name-link">convertToUser</a><wbr>(com.developersboard.shared.dto.UserDto&nbsp;userDto)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUser(com.developersboard.shared.dto.UserDto)" class="member-name-link">convertToUser</a><wbr>(com.upsidle.shared.dto.UserDto&nbsp;userDto)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Transfers data from transfer object to entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.shared.dto.UserDto</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUserDto(com.developersboard.backend.persistent.domain.user.User)" class="member-name-link">convertToUserDto</a><wbr>(com.developersboard.backend.persistent.domain.user.User&nbsp;user)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.shared.dto.UserDto</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUserDto(com.developersboard.backend.persistent.domain.user.User)" class="member-name-link">convertToUserDto</a><wbr>(com.upsidle.backend.persistent.domain.user.User&nbsp;user)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Transfers data from entity to transfer object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.shared.dto.UserDto</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUserDto(com.developersboard.backend.service.impl.UserDetailsBuilder)" class="member-name-link">convertToUserDto</a><wbr>(com.developersboard.backend.service.impl.UserDetailsBuilder&nbsp;userDetailsBuilder)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.shared.dto.UserDto</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUserDto(com.developersboard.backend.service.impl.UserDetailsBuilder)" class="member-name-link">convertToUserDto</a><wbr>(com.upsidle.backend.service.impl.UserDetailsBuilder&nbsp;userDetailsBuilder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Transfers data from userDetails to dto object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.developersboard.shared.dto.UserDto&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUserDto(java.util.List)" class="member-name-link">convertToUserDto</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.developersboard.backend.persistent.domain.user.User&gt;&nbsp;users)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.upsidle.shared.dto.UserDto&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#convertToUserDto(java.util.List)" class="member-name-link">convertToUserDto</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.upsidle.backend.persistent.domain.user.User&gt;&nbsp;users)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Transfers data from entity to transfer object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUser()" class="member-name-link">createUser</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a user.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUser(boolean)" class="member-name-link">createUser</a><wbr>(boolean&nbsp;enabled)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a test user with flexibility.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUser(java.lang.String)" class="member-name-link">createUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a user with some flexibility.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUser(java.lang.String,com.developersboard.enums.RoleType)" class="member-name-link">createUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
- <a href="../../enums/RoleType.html" title="enum class in com.developersboard.enums">RoleType</a>&nbsp;roleType)</code></div>
+ <a href="../../enums/RoleType.html" title="enum class in com.upsidle.enums">RoleType</a>&nbsp;roleType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a user with some flexibility.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUser(java.lang.String,java.lang.String,java.lang.String)" class="member-name-link">createUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;email)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a user with some flexibility.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.backend.persistent.domain.user.User</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.backend.persistent.domain.user.User</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUser(java.lang.String,java.lang.String,java.lang.String,boolean)" class="member-name-link">createUser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;email,
@@ -170,23 +179,27 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create user with some flexibility.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.shared.dto.UserDto</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.shared.dto.UserDto</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUserDto(boolean)" class="member-name-link">createUserDto</a><wbr>(boolean&nbsp;enabled)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a test user with flexibility.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.shared.dto.UserDto</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.shared.dto.UserDto</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUserDto(java.lang.String)" class="member-name-link">createUserDto</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a test user with flexibility.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.shared.dto.UserDto</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.shared.dto.UserDto</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUserDto(java.lang.String,boolean)" class="member-name-link">createUserDto</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  boolean&nbsp;enabled)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a test user with flexibility.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static com.developersboard.shared.dto.UserDto</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static
+  com.upsidle.shared.dto.UserDto</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUserDto(java.lang.String,java.lang.String,java.lang.String,boolean)" class="member-name-link">createUserDto</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;email,
@@ -195,12 +208,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Create user with some flexibility.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#enableUser(com.developersboard.shared.dto.UserDto)" class="member-name-link">enableUser</a><wbr>(com.developersboard.shared.dto.UserDto&nbsp;userDto)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#enableUser(com.developersboard.shared.dto.UserDto)" class="member-name-link">enableUser</a><wbr>(com.upsidle.shared.dto.UserDto&nbsp;userDto)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Enables and unlocks a user.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRoles(java.util.Set)" class="member-name-link">getRoles</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;com.developersboard.backend.persistent.domain.user.UserRole&gt;&nbsp;userRoles)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getRoles(java.util.Set)" class="member-name-link">getRoles</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;com.upsidle.backend.persistent.domain.user.UserRole&gt;&nbsp;userRoles)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Retrieves the roles from the userRoles.</div>
 </div>
@@ -252,7 +265,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUser()">
 <h3>createUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span>()</div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span>()</div>
 <div class="block">Create a user.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -263,7 +276,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUser(boolean)">
 <h3>createUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
 <div class="block">Create a test user with flexibility.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -276,8 +289,8 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUser(java.lang.String,com.developersboard.enums.RoleType)">
 <h3>createUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
- <a href="../../enums/RoleType.html" title="enum class in com.developersboard.enums">RoleType</a>&nbsp;roleType)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
+ <a href="../../enums/RoleType.html" title="enum class in com.upsidle.enums">RoleType</a>&nbsp;roleType)</span></div>
 <div class="block">Create a user with some flexibility.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -291,7 +304,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUser(java.lang.String)">
 <h3>createUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
 <div class="block">Create a user with some flexibility.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -304,7 +317,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUser(java.lang.String,java.lang.String,java.lang.String)">
 <h3>createUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;email)</span></div>
 <div class="block">Create a user with some flexibility.</div>
@@ -321,7 +334,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUser(java.lang.String,java.lang.String,java.lang.String,boolean)">
 <h3>createUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">createUser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;email,
  boolean&nbsp;enabled)</span></div>
@@ -340,7 +353,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUserDto(java.lang.String)">
 <h3>createUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username)</span></div>
 <div class="block">Create a test user with flexibility.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -353,7 +366,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUserDto(boolean)">
 <h3>createUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(boolean&nbsp;enabled)</span></div>
 <div class="block">Create a test user with flexibility.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -366,7 +379,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUserDto(java.lang.String,boolean)">
 <h3>createUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  boolean&nbsp;enabled)</span></div>
 <div class="block">Create a test user with flexibility.</div>
 <dl class="notes">
@@ -381,7 +394,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="createUserDto(java.lang.String,java.lang.String,java.lang.String,boolean)">
 <h3>createUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.shared.dto.UserDto</span>&nbsp;<span class="element-name">createUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;username,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;password,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;email,
  boolean&nbsp;enabled)</span></div>
@@ -400,7 +413,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="convertToUserDto(com.developersboard.backend.persistent.domain.user.User)">
 <h3>convertToUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.shared.dto.UserDto</span>&nbsp;<span class="element-name">convertToUserDto</span><wbr><span class="parameters">(com.developersboard.backend.persistent.domain.user.User&nbsp;user)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.shared.dto.UserDto</span>&nbsp;<span class="element-name">convertToUserDto</span><wbr><span class="parameters">(com.upsidle.backend.persistent.domain.user.User&nbsp;user)</span></div>
 <div class="block">Transfers data from entity to transfer object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -413,7 +426,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="convertToUserDto(java.util.List)">
 <h3>convertToUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.developersboard.shared.dto.UserDto&gt;</span>&nbsp;<span class="element-name">convertToUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.developersboard.backend.persistent.domain.user.User&gt;&nbsp;users)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.upsidle.shared.dto.UserDto&gt;</span>&nbsp;<span class="element-name">convertToUserDto</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;com.upsidle.backend.persistent.domain.user.User&gt;&nbsp;users)</span></div>
 <div class="block">Transfers data from entity to transfer object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -426,7 +439,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="convertToUserDto(com.developersboard.backend.service.impl.UserDetailsBuilder)">
 <h3>convertToUserDto</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.shared.dto.UserDto</span>&nbsp;<span class="element-name">convertToUserDto</span><wbr><span class="parameters">(com.developersboard.backend.service.impl.UserDetailsBuilder&nbsp;userDetailsBuilder)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.shared.dto.UserDto</span>&nbsp;<span class="element-name">convertToUserDto</span><wbr><span class="parameters">(com.upsidle.backend.service.impl.UserDetailsBuilder&nbsp;userDetailsBuilder)</span></div>
 <div class="block">Transfers data from userDetails to dto object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -439,7 +452,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="convertToUser(com.developersboard.shared.dto.UserDto)">
 <h3>convertToUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.developersboard.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">convertToUser</span><wbr><span class="parameters">(com.developersboard.shared.dto.UserDto&nbsp;userDto)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.upsidle.backend.persistent.domain.user.User</span>&nbsp;<span class="element-name">convertToUser</span><wbr><span class="parameters">(com.upsidle.shared.dto.UserDto&nbsp;userDto)</span></div>
 <div class="block">Transfers data from transfer object to entity.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -452,7 +465,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="enableUser(com.developersboard.shared.dto.UserDto)">
 <h3>enableUser</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">enableUser</span><wbr><span class="parameters">(com.developersboard.shared.dto.UserDto&nbsp;userDto)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">enableUser</span><wbr><span class="parameters">(com.upsidle.shared.dto.UserDto&nbsp;userDto)</span></div>
 <div class="block">Enables and unlocks a user.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -476,7 +489,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getRoles(java.util.Set)">
 <h3>getRoles</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getRoles</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;com.developersboard.backend.persistent.domain.user.UserRole&gt;&nbsp;userRoles)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;</span>&nbsp;<span class="element-name">getRoles</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;com.upsidle.backend.persistent.domain.user.UserRole&gt;&nbsp;userRoles)</span></div>
 <div class="block">Retrieves the roles from the userRoles.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

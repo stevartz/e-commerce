@@ -179,21 +179,21 @@
 
                     <div class="mb-3" th:text="${userHistory.timeElapsedDescription}"></div>
                     <div class="like-comm"
-                         th:if="${userHistory.userHistoryType == T(com.developersboard.enums.UserHistoryType).CREATED}">
+                         th:if="${userHistory.userHistoryType == T(com.upsidle.enums.UserHistoryType).CREATED}">
                       <span class="link m-r-0">Created by</span>
                       <strong>
                         <span
-                            th:if="${userHistory.userHistoryType == T(com.developersboard.enums.UserHistoryType).CREATED}"
+                            th:if="${userHistory.userHistoryType == T(com.upsidle.enums.UserHistoryType).CREATED}"
                             th:text="'@' + ${user.createdBy}">
                         </span>
                       </strong>
                     </div>
                     <div class="like-comm"
-                         th:unless="${userHistory.userHistoryType == T(com.developersboard.enums.UserHistoryType).CREATED}">
+                         th:unless="${userHistory.userHistoryType == T(com.upsidle.enums.UserHistoryType).CREATED}">
                       <span class="link m-r-0">Updated by</span>
                       <strong>
                         <span th:text="'@' + ${user.updatedBy}"
-                              th:unless="${userHistory.userHistoryType == T(com.developersboard.enums.UserHistoryType).CREATED}">
+                              th:unless="${userHistory.userHistoryType == T(com.upsidle.enums.UserHistoryType).CREATED}">
                         </span>
                       </strong>
                     </div>

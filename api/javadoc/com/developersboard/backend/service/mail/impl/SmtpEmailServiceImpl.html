@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.backend.service.mail.impl, class: SmtpEmailServiceImpl">
+<meta name="description" content="declaration: package: com.upsidle.backend.service.mail.impl, class: SmtpEmailServiceImpl">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,24 +68,24 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.backend.service.mail.impl</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.backend.service.mail.impl</a></div>
 <h1 title="Class SmtpEmailServiceImpl" class="title">Class SmtpEmailServiceImpl</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance"><a href="AbstractEmailServiceImpl.html" title="class in com.developersboard.backend.service.mail.impl">com.developersboard.backend.service.mail.impl.AbstractEmailServiceImpl</a>
-<div class="inheritance">com.developersboard.backend.service.mail.impl.SmtpEmailServiceImpl</div>
+<div class="inheritance"><a href="AbstractEmailServiceImpl.html" title="class in com.upsidle.backend.service.mail.impl">com.upsidle.backend.service.mail.impl.AbstractEmailServiceImpl</a>
+<div class="inheritance">com.upsidle.backend.service.mail.impl.SmtpEmailServiceImpl</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../EmailService.html" title="interface in com.developersboard.backend.service.mail">EmailService</a></code></dd>
+<dd><code><a href="../EmailService.html" title="interface in com.upsidle.backend.service.mail">EmailService</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="annotations">@Service
 @Profile({"prod","test"})
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">SmtpEmailServiceImpl</span>
-<span class="extends-implements">extends <a href="AbstractEmailServiceImpl.html" title="class in com.developersboard.backend.service.mail.impl">AbstractEmailServiceImpl</a></span></div>
+<span class="extends-implements">extends <a href="AbstractEmailServiceImpl.html" title="class in com.upsidle.backend.service.mail.impl">AbstractEmailServiceImpl</a></span></div>
 <div class="block">SmtpEmailServiceImpl Class has the operation of email sending in a real time.</div>
 <dl class="notes">
 <dt>Since:</dt>
@@ -93,7 +93,7 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="../EmailService.html" title="interface in com.developersboard.backend.service.mail"><code>EmailService</code></a></li>
+<li><a href="../EmailService.html" title="interface in com.upsidle.backend.service.mail"><code>EmailService</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -125,12 +125,12 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendHtmlEmail(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmail</a><wbr>(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.developersboard.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendHtmlEmail(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmail</a><wbr>(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.upsidle.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sends an email with the provided EmailRequestBuilder details.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendHtmlEmailWithAttachment(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmailWithAttachment</a><wbr>(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.developersboard.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sendHtmlEmailWithAttachment(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmailWithAttachment</a><wbr>(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.upsidle.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sends an email with the provided details and template for html with an attachment.</div>
 </div>
@@ -143,7 +143,7 @@ loadScripts(document, 'script');</script>
 </div>
 </div>
 <div class="inherited-list">
-<h3 id="methods-inherited-from-class-com.developersboard.backend.service.mail.impl.AbstractEmailServiceImpl">Methods inherited from class&nbsp;com.developersboard.backend.service.mail.impl.<a href="AbstractEmailServiceImpl.html" title="class in com.developersboard.backend.service.mail.impl">AbstractEmailServiceImpl</a></h3>
+<h3 id="methods-inherited-from-class-com.developersboard.backend.service.mail.impl.AbstractEmailServiceImpl">Methods inherited from class&nbsp;com.upsidle.backend.service.mail.impl.<a href="AbstractEmailServiceImpl.html" title="class in com.upsidle.backend.service.mail.impl">AbstractEmailServiceImpl</a></h3>
 <code><a href="AbstractEmailServiceImpl.html#prepareEmailRequest(com.developersboard.web.payload.request.mail.HtmlEmailRequest)">prepareEmailRequest</a>, <a href="AbstractEmailServiceImpl.html#sendAccountConfirmationEmail(com.developersboard.shared.dto.UserDto)">sendAccountConfirmationEmail</a>, <a href="AbstractEmailServiceImpl.html#sendAccountVerificationEmail(com.developersboard.shared.dto.UserDto,java.lang.String)">sendAccountVerificationEmail</a>, <a href="AbstractEmailServiceImpl.html#sendMailWithFeedback(com.developersboard.web.payload.request.mail.FeedbackRequest)">sendMailWithFeedback</a>, <a href="AbstractEmailServiceImpl.html#sendPasswordResetConfirmationEmail(com.developersboard.shared.dto.UserDto)">sendPasswordResetConfirmationEmail</a>, <a href="AbstractEmailServiceImpl.html#sendPasswordResetEmail(com.developersboard.shared.dto.UserDto,java.lang.String)">sendPasswordResetEmail</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
@@ -187,7 +187,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendHtmlEmail(com.developersboard.web.payload.request.mail.HtmlEmailRequest)">
 <h3>sendHtmlEmail</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmail</span><wbr><span class="parameters">(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.developersboard.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmail</span><wbr><span class="parameters">(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.upsidle.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</span></div>
 <div class="block">Sends an email with the provided EmailRequestBuilder details.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -195,7 +195,7 @@ loadScripts(document, 'script');</script>
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list">
-<li><a href="../../../../web/payload/request/mail/EmailRequest.html" title="class in com.developersboard.web.payload.request.mail"><code>EmailRequest</code></a></li>
+<li><a href="../../../../web/payload/request/mail/EmailRequest.html" title="class in com.upsidle.web.payload.request.mail"><code>EmailRequest</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -204,7 +204,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendHtmlEmailWithAttachment(com.developersboard.web.payload.request.mail.HtmlEmailRequest)">
 <h3>sendHtmlEmailWithAttachment</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmailWithAttachment</span><wbr><span class="parameters">(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.developersboard.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmailWithAttachment</span><wbr><span class="parameters">(<a href="../../../../web/payload/request/mail/HtmlEmailRequest.html" title="class in com.upsidle.web.payload.request.mail">HtmlEmailRequest</a>&nbsp;emailRequest)</span></div>
 <div class="block">Sends an email with the provided details and template for html with an attachment.</div>
 <dl class="notes">
 <dt>Parameters:</dt>

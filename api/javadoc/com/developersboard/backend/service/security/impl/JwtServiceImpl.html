@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.backend.service.security.impl, class: JwtServiceImpl">
+<meta name="description" content="declaration: package: com.upsidle.backend.service.security.impl, class: JwtServiceImpl">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,22 +68,22 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.backend.service.security.impl</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.backend.service.security.impl</a></div>
 <h1 title="Class JwtServiceImpl" class="title">Class JwtServiceImpl</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.developersboard.backend.service.security.impl.JwtServiceImpl</div>
+<div class="inheritance">com.upsidle.backend.service.security.impl.JwtServiceImpl</div>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></code></dd>
+<dd><code><a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="annotations">@Service
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">JwtServiceImpl</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></span></div>
+implements <a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></span></div>
 <div class="block">This is the implementation of the jwt service.</div>
 <dl class="notes">
 <dt>Since:</dt>
@@ -181,7 +181,7 @@ implements <a href="../JwtService.html" title="interface in com.developersboard.
 <div class="block">Generate a JwtToken for the specified username.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../JwtService.html#generateJwtToken(java.lang.String)">generateJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></code></dd>
+<dd><code><a href="../JwtService.html#generateJwtToken(java.lang.String)">generateJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>username</code> - the username</dd>
 <dt>Returns:</dt>
@@ -197,7 +197,7 @@ implements <a href="../JwtService.html" title="interface in com.developersboard.
 <div class="block">Generate a JwtToken for the specified username.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../JwtService.html#generateJwtToken(java.lang.String,java.util.Date)">generateJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></code></dd>
+<dd><code><a href="../JwtService.html#generateJwtToken(java.lang.String,java.util.Date)">generateJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>username</code> - the username</dd>
 <dd><code>expiration</code> - the expiration date</dd>
@@ -213,7 +213,7 @@ implements <a href="../JwtService.html" title="interface in com.developersboard.
 <div class="block">Retrieve username from the token.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../JwtService.html#getUsernameFromToken(java.lang.String)">getUsernameFromToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></code></dd>
+<dd><code><a href="../JwtService.html#getUsernameFromToken(java.lang.String)">getUsernameFromToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>token</code> - the token</dd>
 <dt>Returns:</dt>
@@ -229,7 +229,7 @@ implements <a href="../JwtService.html" title="interface in com.developersboard.
 <div class="block">Retrieves the jwt token from the request cookie or request header if present and valid.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../JwtService.html#getJwtToken(javax.servlet.http.HttpServletRequest,boolean)">getJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></code></dd>
+<dd><code><a href="../JwtService.html#getJwtToken(javax.servlet.http.HttpServletRequest,boolean)">getJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>request</code> - the httpRequest</dd>
 <dd><code>fromCookie</code> - if jwt should be retrieved from the cookies.</dd>
@@ -245,7 +245,7 @@ implements <a href="../JwtService.html" title="interface in com.developersboard.
 <div class="block">Validates the Jwt token passed to it.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../JwtService.html#isValidJwtToken(java.lang.String)">isValidJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.developersboard.backend.service.security">JwtService</a></code></dd>
+<dd><code><a href="../JwtService.html#isValidJwtToken(java.lang.String)">isValidJwtToken</a></code>&nbsp;in interface&nbsp;<code><a href="../JwtService.html" title="interface in com.upsidle.backend.service.security">JwtService</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>token</code> - the token</dd>
 <dt>Returns:</dt>

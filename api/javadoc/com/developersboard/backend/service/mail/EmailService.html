@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="dc.created" content="2022-04-16">
-<meta name="description" content="declaration: package: com.developersboard.backend.service.mail, interface: EmailService">
+<meta name="description" content="declaration: package: com.upsidle.backend.service.mail, interface: EmailService">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -68,7 +68,7 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.developersboard.backend.service.mail</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">com.upsidle.backend.service.mail</a></div>
 <h1 title="Interface EmailService" class="title">Interface EmailService</h1>
 </div>
 <section class="class-description" id="class-description">
@@ -94,23 +94,23 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendAccountConfirmationEmail(com.developersboard.shared.dto.UserDto)" class="member-name-link">sendAccountConfirmationEmail</a><wbr>(com.developersboard.shared.dto.UserDto&nbsp;userDto)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendAccountConfirmationEmail(com.developersboard.shared.dto.UserDto)" class="member-name-link">sendAccountConfirmationEmail</a><wbr>(com.upsidle.shared.dto.UserDto&nbsp;userDto)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends an email to the provided user to confirm account activation.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendAccountVerificationEmail(com.developersboard.shared.dto.UserDto,java.lang.String)" class="member-name-link">sendAccountVerificationEmail</a><wbr>(com.developersboard.shared.dto.UserDto&nbsp;userDto,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendAccountVerificationEmail(com.developersboard.shared.dto.UserDto,java.lang.String)" class="member-name-link">sendAccountVerificationEmail</a><wbr>(com.upsidle.shared.dto.UserDto&nbsp;userDto,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends an email to the provided user to verify account.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendHtmlEmail(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmail</a><wbr>(com.developersboard.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendHtmlEmail(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmail</a><wbr>(com.upsidle.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends an email with the provided EmailRequestBuilder details.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendHtmlEmailWithAttachment(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmailWithAttachment</a><wbr>(com.developersboard.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendHtmlEmailWithAttachment(com.developersboard.web.payload.request.mail.HtmlEmailRequest)" class="member-name-link">sendHtmlEmailWithAttachment</a><wbr>(com.upsidle.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends an email with the provided details and template for html with an attachment.</div>
 </div>
@@ -120,17 +120,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Sends an email with the provided simple mail message object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendMailWithFeedback(com.developersboard.web.payload.request.mail.FeedbackRequest)" class="member-name-link">sendMailWithFeedback</a><wbr>(com.developersboard.web.payload.request.mail.FeedbackRequest&nbsp;feedbackRequestBuilder)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendMailWithFeedback(com.developersboard.web.payload.request.mail.FeedbackRequest)" class="member-name-link">sendMailWithFeedback</a><wbr>(com.upsidle.web.payload.request.mail.FeedbackRequest&nbsp;feedbackRequestBuilder)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends an email given a feedback Pojo.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendPasswordResetConfirmationEmail(com.developersboard.shared.dto.UserDto)" class="member-name-link">sendPasswordResetConfirmationEmail</a><wbr>(com.developersboard.shared.dto.UserDto&nbsp;userDto)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendPasswordResetConfirmationEmail(com.developersboard.shared.dto.UserDto)" class="member-name-link">sendPasswordResetConfirmationEmail</a><wbr>(com.upsidle.shared.dto.UserDto&nbsp;userDto)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Send password reset confirmation email to user.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendPasswordResetEmail(com.developersboard.shared.dto.UserDto,java.lang.String)" class="member-name-link">sendPasswordResetEmail</a><wbr>(com.developersboard.shared.dto.UserDto&nbsp;userDto,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#sendPasswordResetEmail(com.developersboard.shared.dto.UserDto,java.lang.String)" class="member-name-link">sendPasswordResetEmail</a><wbr>(com.upsidle.shared.dto.UserDto&nbsp;userDto,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Sends an email to the provided user to reset password.</div>
@@ -163,7 +163,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendHtmlEmail(com.developersboard.web.payload.request.mail.HtmlEmailRequest)">
 <h3>sendHtmlEmail</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmail</span><wbr><span class="parameters">(com.developersboard.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmail</span><wbr><span class="parameters">(com.upsidle.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</span></div>
 <div class="block">Sends an email with the provided EmailRequestBuilder details.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -180,7 +180,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendHtmlEmailWithAttachment(com.developersboard.web.payload.request.mail.HtmlEmailRequest)">
 <h3>sendHtmlEmailWithAttachment</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmailWithAttachment</span><wbr><span class="parameters">(com.developersboard.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendHtmlEmailWithAttachment</span><wbr><span class="parameters">(com.upsidle.web.payload.request.mail.HtmlEmailRequest&nbsp;emailRequest)</span></div>
 <div class="block">Sends an email with the provided details and template for html with an attachment.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -191,7 +191,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendMailWithFeedback(com.developersboard.web.payload.request.mail.FeedbackRequest)">
 <h3>sendMailWithFeedback</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendMailWithFeedback</span><wbr><span class="parameters">(com.developersboard.web.payload.request.mail.FeedbackRequest&nbsp;feedbackRequestBuilder)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendMailWithFeedback</span><wbr><span class="parameters">(com.upsidle.web.payload.request.mail.FeedbackRequest&nbsp;feedbackRequestBuilder)</span></div>
 <div class="block">Sends an email given a feedback Pojo.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -208,7 +208,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendAccountVerificationEmail(com.developersboard.shared.dto.UserDto,java.lang.String)">
 <h3>sendAccountVerificationEmail</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendAccountVerificationEmail</span><wbr><span class="parameters">(com.developersboard.shared.dto.UserDto&nbsp;userDto,
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendAccountVerificationEmail</span><wbr><span class="parameters">(com.upsidle.shared.dto.UserDto&nbsp;userDto,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</span></div>
 <div class="block">Sends an email to the provided user to verify account.</div>
 <dl class="notes">
@@ -221,7 +221,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendAccountConfirmationEmail(com.developersboard.shared.dto.UserDto)">
 <h3>sendAccountConfirmationEmail</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendAccountConfirmationEmail</span><wbr><span class="parameters">(com.developersboard.shared.dto.UserDto&nbsp;userDto)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendAccountConfirmationEmail</span><wbr><span class="parameters">(com.upsidle.shared.dto.UserDto&nbsp;userDto)</span></div>
 <div class="block">Sends an email to the provided user to confirm account activation.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -232,7 +232,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendPasswordResetEmail(com.developersboard.shared.dto.UserDto,java.lang.String)">
 <h3>sendPasswordResetEmail</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendPasswordResetEmail</span><wbr><span class="parameters">(com.developersboard.shared.dto.UserDto&nbsp;userDto,
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendPasswordResetEmail</span><wbr><span class="parameters">(com.upsidle.shared.dto.UserDto&nbsp;userDto,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;token)</span></div>
 <div class="block">Sends an email to the provided user to reset password.</div>
 <dl class="notes">
@@ -245,7 +245,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="sendPasswordResetConfirmationEmail(com.developersboard.shared.dto.UserDto)">
 <h3>sendPasswordResetConfirmationEmail</h3>
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendPasswordResetConfirmationEmail</span><wbr><span class="parameters">(com.developersboard.shared.dto.UserDto&nbsp;userDto)</span></div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">sendPasswordResetConfirmationEmail</span><wbr><span class="parameters">(com.upsidle.shared.dto.UserDto&nbsp;userDto)</span></div>
 <div class="block">Send password reset confirmation email to user.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
