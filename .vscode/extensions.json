@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "formulahendry.auto-rename-tag",
+    "clinyong.vscode-css-modules",
+    "vunguyentuan.vscode-css-variables",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "csstools.postcss",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
