@@ -4,6 +4,14 @@ name: Api CI
 on:
   pull_request:
     branches: [develop, main]
+
+concurrency:
+  group: ${{ github.head_ref }}-ci
+  cancel-in-progress: true
+
+env:
+  working-dir: ./api
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,8 +24,10 @@ jobs:
           distribution: "temurin"
       - name: Grant execute permissions for gradlew
         run: chmod +x gradlew
+        working-directory: ${{ env.working-dir }}
+
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2
         with:
           arguments: clean build
-          build-root-directory: ./api
+          build-root-directory: ${{ env.working-dir }}
