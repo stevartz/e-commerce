@@ -1,0 +1,45 @@
+# Runs build for the Admin Portal
+---
+name: Admin Portal CI
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - admin-portal/**
+      - .github/workflows/admin-portal-ci.yml
+  pull_request:
+    branches:
+      - admin-portal/**
+      - .github/workflows/admin-portal-ci.yml
+
+concurrency:
+  group: ${{ github.head_ref }}-ci
+  cancel-in-progress: true
+
+env:
+  nodeVersion: 16.x
+  cache-yarn-lock: ./admin-portal/yarn.lock
+  working-dir: ./admin-portal
+
+jobs:
+  build:
+    name: Build Admin Portal
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          cache-dependency-path: ${{ env.cache-yarn-lock }}
+          node-version: ${{ env.nodeVersion }}
+          check-latest: true
+
+      - name: Install Yarn Dependencies
+        run: yarn install
+        working-directory: ${{ env.working-dir }}
+
+      - name: Build App
+        run: yarn build
+        working-directory: ${{ env.working-dir }}

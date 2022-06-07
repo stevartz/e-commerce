@@ -1,0 +1,23 @@
+{
+  "name": "upsidle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:stevartz/e-commerce.git",
+  "author": "Eric Opoku <eric.opoku20@yahoo.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.14.0",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.17"
+  },
+  "scripts": {
+    "api-format": "cd ./api && ./gradlew spotlessApply",
+    "api-format-check": "cd ./api && ./gradlew spotlessCheck"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0"
+  }
+}
