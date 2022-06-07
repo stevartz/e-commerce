@@ -2,12 +2,17 @@
 ---
 name: Api CI
 on:
+  push:
+    branches:
+      - develop
+    paths:
+      - api/**
+      - .github/workflows/api-ci.yml
   pull_request:
     branches: [develop, main]
-
-concurrency:
-  group: ${{ github.head_ref }}-ci
-  cancel-in-progress: true
+    paths:
+      - api/**
+      - .github/workflows/api-ci.yml
 
 env:
   working-dir: ./api

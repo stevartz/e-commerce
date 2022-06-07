@@ -9,13 +9,10 @@ on:
       - customer-portal/**
       - .github/workflows/customer-portal-ci.yml
   pull_request:
-    branches:
+    branches: [develop, main]
+    paths:
       - customer-portal/**
       - .github/workflows/customer-portal-ci.yml
-
-concurrency:
-  group: ${{ github.head_ref }}-ci
-  cancel-in-progress: true
 
 env:
   nodeVersion: 16.x
@@ -23,10 +20,74 @@ env:
   working-dir: ./customer-portal
 
 jobs:
+  type-check:
+    name: Type Check Customer Portal
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          cache-dependency-path: ${{ env.cache-yarn-lock }}
+          node-version: ${{ env.nodeVersion }}
+          check-latest: true
+
+      - name: Install Yarn Dependencies
+        run: yarn install
+        working-directory: ${{ env.working-dir }}
+
+      - name: Typescript
+        run: yarn tsc --noEmit
+        working-directory: ${{ env.working-dir }}
+
+  lint:
+    name: Lint Customer Portal
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          cache-dependency-path: ${{ env.cache-yarn-lock }}
+          node-version: ${{ env.nodeVersion }}
+          check-latest: true
+
+      - name: Install Yarn Dependencies
+        run: yarn install
+        working-directory: ${{ env.working-dir }}
+
+      - name: Lint
+        run: yarn lint:ci
+        working-directory: ${{ env.working-dir }}
+
+  format-check:
+    name: Format Check Customer Portal
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          cache-dependency-path: ${{ env.cache-yarn-lock }}
+          node-version: ${{ env.nodeVersion }}
+          check-latest: true
+
+      - name: Install Yarn Dependencies
+        run: yarn install
+        working-directory: ${{ env.working-dir }}
+
+      - name: Format Check
+        run: yarn format-check
+        working-directory: ${{ env.working-dir }}
+
   build:
     name: Build Customer Portal
     runs-on: ubuntu-latest
     timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

@@ -9,13 +9,10 @@ on:
       - admin-portal/**
       - .github/workflows/admin-portal-ci.yml
   pull_request:
-    branches:
+    branches: [develop, main]
+    paths:
       - admin-portal/**
       - .github/workflows/admin-portal-ci.yml
-
-concurrency:
-  group: ${{ github.head_ref }}-ci
-  cancel-in-progress: true
 
 env:
   nodeVersion: 16.x
@@ -23,6 +20,27 @@ env:
   working-dir: ./admin-portal
 
 jobs:
+  type-check:
+    name: Type Check Admin Portal
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+          cache-dependency-path: ${{ env.cache-yarn-lock }}
+          node-version: ${{ env.nodeVersion }}
+          check-latest: true
+
+      - name: Install Yarn Dependencies
+        run: yarn install
+        working-directory: ${{ env.working-dir }}
+
+      - name: Typescript
+        run: yarn tsc --noEmit
+        working-directory: ${{ env.working-dir }}
+
   build:
     name: Build Admin Portal
     runs-on: ubuntu-latest
