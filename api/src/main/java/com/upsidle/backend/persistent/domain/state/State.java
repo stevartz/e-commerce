@@ -2,17 +2,14 @@ package com.upsidle.backend.persistent.domain.state;
 
 import com.upsidle.backend.persistent.domain.base.BaseEntity;
 import com.upsidle.backend.persistent.domain.country.Country;
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.envers.Audited;
-
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * The State model for the application.
@@ -21,7 +18,6 @@ import java.util.Objects;
  * @version 1.0
  * @since 1.0
  */
-
 @Entity
 @Getter
 @Setter
@@ -29,32 +25,34 @@ import java.util.Objects;
 @Table(name = "states")
 @ToString(callSuper = true)
 public class State extends BaseEntity<Long> implements Serializable {
-    private static final long serialVersionUID = 4741179736997334897L;
+  private static final long serialVersionUID = 4741179736997334897L;
 
-    private String name;
+  @Column(unique = true, nullable = false)
+  @NotBlank(message = "State name is needed for all state entities")
+  private String name;
 
-    @ManyToOne
-    @JoinColumn(name="country_id", nullable=false)
-    private Country country;
+  @ManyToOne
+  @JoinColumn(name = "country_id", nullable = false)
+  private Country country;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof State state) || !super.equals(o)) {
-            return false;
-        }
-        return Objects.equals(getName(), state.getName());
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
-
-    @Override
-    protected boolean canEqual(Object other) {
-        return other instanceof State;
+    if (!(o instanceof State state) || !super.equals(o)) {
+      return false;
     }
+    return Objects.equals(getName(), state.getName());
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), getName());
-    }
+  @Override
+  protected boolean canEqual(Object other) {
+    return other instanceof State;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), getName());
+  }
 }
