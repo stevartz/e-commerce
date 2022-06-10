@@ -8,20 +8,17 @@ import org.junit.jupiter.api.Test;
 
 public class CategoryTest extends TestUtils {
 
+  @Test
+  void equalsContract() {
 
-    @Test
-    void equalsContract() {
+    EqualsVerifier.forClass(Category.class)
+        .withRedefinedSuperclass()
+        .withOnlyTheseFields(TestUtils.getEntityEqualsFields("name"))
+        .verify();
+  }
 
-        EqualsVerifier.forClass(Category.class)
-                .withRedefinedSuperclass()
-                .withOnlyTheseFields(TestUtils.getEntityEqualsFields("name"))
-                .verify();
-    }
-
-    @Test
-    void testToString() {
-        ToStringVerifier.forClass(Category.class).withClassName(NameStyle.SIMPLE_NAME).verify();
-    }
+  @Test
+  void testToString() {
+    ToStringVerifier.forClass(Category.class).withClassName(NameStyle.SIMPLE_NAME).verify();
+  }
 }
-
-
