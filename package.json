@@ -12,7 +12,10 @@
   },
   "scripts": {
     "api-format": "cd ./api && ./gradlew spotlessApply",
-    "api-format-check": "cd ./api && ./gradlew spotlessCheck"
+    "api-format-check": "cd ./api && chmod +x gradlew && ./gradlew spotlessCheck && git checkout gradlew",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",

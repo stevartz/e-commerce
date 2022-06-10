@@ -55,9 +55,8 @@ TBD
 - [Email Service with HTML and attachment support](documents/EMAIL_SERVICE.md)
 - [Security Configuration Without WebSecurityConfigurerAdapter](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter#ldap-authentication)
 
-
-
 ## Production Ready Folder Structure
+
 TBD
 
 ## Contributing
@@ -75,7 +74,6 @@ TBD
 * **George Anguah** - *Initial work*
 * **Stephen Boakye** - *Initial work*
 * **Matthew Puentes** - *Initial work*
-
 
 ## Acknowledgments
 
@@ -121,13 +119,18 @@ TBD
 * Run unit tests using - **./gradlew test**
 * Run integration tests using - **./gradlew integrationTest**
 * Run all tests using - **./gradlew testAll**
-* * Access application on *http://localhost:8080/*
+*
+    * Access application on *http://localhost:8080/*
 * Access in-memory database on *http://localhost:8080/console*
-* Run owasp dependency check - **./gradlew  dependencyCheckAnalyze --info**
+* Run owasp dependency check - **./gradlew dependencyCheckAnalyze --info**
 * Access Swagger UI - **http://localhost:8080/swagger-ui/index.html**
 
 ## Running on Docker (Assuming docker is installed)
-* in the directory where docker-compose.yml file resides, simply run the command - **docker-compose up**
+
+* in the directory where docker-compose.yml file resides, simply run the command - **docker-compose
+  up**
 
 ## Stop running application on Docker
-* in the directory where docker-compose.yml file resides, simply run the command - **docker-compose down**
+
+* in the directory where docker-compose.yml file resides, simply run the command - **docker-compose
+  down**

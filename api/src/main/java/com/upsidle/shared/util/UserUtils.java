@@ -32,14 +32,12 @@ import org.apache.commons.validator.routines.EmailValidator;
  */
 public final class UserUtils {
 
-  /** The Constant FAKER. */
-  private static final Faker FAKER = new Faker();
-
-  /** Minimum password length for the password generation. */
-  private static final int PASSWORD_MIN_LENGTH = 4;
-
   /** Maximum password length for the password generation. */
   public static final int PASSWORD_MAX_LENGTH = 15;
+  /** The Constant FAKER. */
+  private static final Faker FAKER = new Faker();
+  /** Minimum password length for the password generation. */
+  private static final int PASSWORD_MIN_LENGTH = 4;
 
   private UserUtils() {
     throw new AssertionError(ErrorConstants.NOT_INSTANTIABLE);

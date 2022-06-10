@@ -1,4 +1,3 @@
-
 ## All tests are written in JUnit 5.
 
 ## Equals, Hashcode and ToString
@@ -46,6 +45,7 @@ Tests are powered by [S3 mock library for Java/Scala](https://github.com/findify
 Bean definition for Amazons3 in test context is defined as:
 
 ```java
+
 @Configuration
 @Profile(ProfileTypeConstants.TEST)
 public class TestConfig {
