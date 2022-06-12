@@ -1,4 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Get the current branch
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+# Ensure that no commit is made directly to the main or develop branch
+if [ "$branch" = "develop" ] || [ "$branch" = "main" ]; then
+  echo "You can't commit directly to $branch branch"
+  exit 1
+fi
+
 yarn lint-staged
