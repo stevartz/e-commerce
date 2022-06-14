@@ -1,20 +1,20 @@
 package com.upsidle.backend.persistent.domain.category;
 
 import com.upsidle.backend.persistent.domain.base.BaseEntity;
-import java.io.Serial;
-import java.io.Serializable;
-import java.util.Objects;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
- * The product model for the application.
+ * The category model for the application.
  *
  * @author Stephen Boakye
  * @version 1.0
@@ -23,7 +23,6 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@Table(name = "category")
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class Category extends BaseEntity<Long> implements Serializable {
