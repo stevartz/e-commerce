@@ -1,17 +1,16 @@
 package com.upsidle.backend.persistent.domain.category;
 
 import com.upsidle.backend.persistent.domain.base.BaseEntity;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
-import java.io.Serial;
-import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * The category model for the application.
