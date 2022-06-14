@@ -17,7 +17,6 @@ import com.upsidle.enums.RoleType;
 import com.upsidle.shared.dto.UserDto;
 import com.upsidle.shared.util.UserUtils;
 import com.upsidle.task.UserPruningScheduler;
-import com.upsidle.web.controller.user.PasswordController;
 import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
@@ -56,8 +55,6 @@ public abstract class IntegrationTestUtils {
   @Autowired protected transient SystemProperties systemProperties;
   @Autowired protected transient EmailService emailService;
   @Autowired protected transient GreenMail greenMail;
-
-  @Autowired protected transient PasswordController passwordController;
 
   @Mock protected transient MockMultipartFile multipartFile;
 
