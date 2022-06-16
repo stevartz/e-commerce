@@ -3,8 +3,10 @@ package com.upsidle.backend.service.mail.impl;
 import com.upsidle.backend.service.mail.EmailService;
 import com.upsidle.constant.EmailConstants;
 import com.upsidle.constant.user.PasswordConstants;
+import com.upsidle.constant.user.ProfileConstants;
 import com.upsidle.constant.user.SignUpConstants;
 import com.upsidle.constant.user.UserConstants;
+import com.upsidle.exception.InvalidServiceRequestException;
 import com.upsidle.shared.dto.UserDto;
 import com.upsidle.shared.util.core.ValidationUtils;
 import com.upsidle.shared.util.core.WebUtils;
@@ -35,33 +37,40 @@ import org.thymeleaf.context.Context;
 public abstract class AbstractEmailServiceImpl implements EmailService {
 
   /**
-   * Sends an email given a feedback Pojo.
+   * Prepares a context with current content.
    *
-   * @param feedbackRequest the feedback pojo.
-   * @see FeedbackRequest
-   * @throws UnsupportedEncodingException if the encoding is not supported.
+   * @param emailRequest the emailRequest
+   * @return emailRequest with context
    */
-  @Override
-  public void sendMailWithFeedback(final FeedbackRequest feedbackRequest)
-      throws UnsupportedEncodingException {
+  public static HtmlEmailRequest prepareEmailRequest(final HtmlEmailRequest emailRequest) {
+    var context = new Context();
+    context.setVariable(EmailConstants.URLS, emailRequest.getUrls());
+    context.setVariable(UserConstants.USERNAME, emailRequest.getReceiver().getUsername());
+    emailRequest.setTo(emailRequest.getReceiver().getEmail());
+    emailRequest.setSubject(emailRequest.getSubject());
 
-    var simpleMailMessage = prepareSimpleMailMessage(feedbackRequest);
-    sendMail(simpleMailMessage);
+    if (emailRequest.getUrls().containsKey(EmailConstants.EMAIL_LINK)) {
+      context.setVariable(
+          EmailConstants.EMAIL_LINK, emailRequest.getUrls().get(EmailConstants.EMAIL_LINK));
+      LOG.info(emailRequest.getUrls().get(EmailConstants.EMAIL_LINK));
+    }
+    emailRequest.setContext(context);
+
+    return emailRequest;
   }
 
-  /**
-   * Sends an email to the provided user to verify account.
-   *
-   * @param userDto the userDto
-   * @param token the token
-   * @throws MessagingException if the email cannot be sent.
-   * @throws UnsupportedEncodingException if the encoding is not supported.
-   * @throws FileNotFoundException if the specified attachment file is not found
-   */
   @Override
-  public void sendAccountVerificationEmail(UserDto userDto, String token)
-      throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
+  public void sendMailWithFeedback(final FeedbackRequest feedbackRequest) {
+    try {
+      var simpleMailMessage = prepareSimpleMailMessage(feedbackRequest);
+      sendMail(simpleMailMessage);
+    } catch (UnsupportedEncodingException e) {
+      throw new InvalidServiceRequestException(e);
+    }
+  }
 
+  @Override
+  public void sendAccountVerificationEmail(UserDto userDto, String token) {
     Validate.notNull(userDto, UserConstants.USER_DTO_MUST_NOT_BE_NULL);
 
     var emailRequest =
@@ -75,44 +84,23 @@ public abstract class AbstractEmailServiceImpl implements EmailService {
     sendHtmlEmail(prepareEmailRequest(emailRequest));
   }
 
-  /**
-   * Sends an email to the provided user to confirm account activation.
-   *
-   * @param userDto the userDto
-   * @throws MessagingException if the email cannot be sent.
-   * @throws UnsupportedEncodingException if the encoding is not supported.
-   * @throws FileNotFoundException if the specified attachment file is not found
-   */
   @Override
-  public void sendAccountConfirmationEmail(UserDto userDto)
-      throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
-
+  public void sendAccountConfirmationEmail(final UserDto userDto) {
     Validate.notNull(userDto, UserConstants.USER_DTO_MUST_NOT_BE_NULL);
 
     HtmlEmailRequest emailRequest =
         prepareHtmlEmailRequest(
             userDto,
             null,
-            "/profile-path",
+            ProfileConstants.PROFILE_MAPPING,
             EmailConstants.EMAIL_WELCOME_TEMPLATE,
             EmailConstants.CONFIRMATION_SUCCESS_EMAIL_SUBJECT);
     // prepare the email request then send it.
     sendHtmlEmail(prepareEmailRequest(emailRequest));
   }
 
-  /**
-   * Sends an email to the provided user to reset password.
-   *
-   * @param userDto the userDto
-   * @param token the password token
-   * @throws MessagingException if the email cannot be sent.
-   * @throws UnsupportedEncodingException if the encoding is not supported.
-   * @throws FileNotFoundException if the specified attachment file is not found
-   */
   @Override
-  public void sendPasswordResetEmail(UserDto userDto, String token)
-      throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
-
+  public void sendPasswordResetEmail(final UserDto userDto, final String token) {
     Validate.notNull(userDto, UserConstants.USER_DTO_MUST_NOT_BE_NULL);
 
     HtmlEmailRequest emailRequest =
@@ -126,18 +114,8 @@ public abstract class AbstractEmailServiceImpl implements EmailService {
     sendHtmlEmail(prepareEmailRequest(emailRequest));
   }
 
-  /**
-   * Send password reset confirmation email to user.
-   *
-   * @param userDto the user dto
-   * @throws MessagingException if the email cannot be sent.
-   * @throws UnsupportedEncodingException if the encoding is not supported.
-   * @throws FileNotFoundException if the specified attachment file is not found
-   */
   @Override
-  public void sendPasswordResetConfirmationEmail(UserDto userDto)
-      throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
-
+  public void sendPasswordResetConfirmationEmail(final UserDto userDto) {
     Validate.notNull(userDto, UserConstants.USER_DTO_MUST_NOT_BE_NULL);
 
     HtmlEmailRequest emailRequest =
@@ -178,29 +156,6 @@ public abstract class AbstractEmailServiceImpl implements EmailService {
     emailRequest.setUrls(links);
     emailRequest.setReceiver(userDto);
     emailRequest.setSubject(subject);
-
-    return emailRequest;
-  }
-
-  /**
-   * Prepares a context with current content.
-   *
-   * @param emailRequest the emailRequest
-   * @return emailRequest with context
-   */
-  public static HtmlEmailRequest prepareEmailRequest(final HtmlEmailRequest emailRequest) {
-    var context = new Context();
-    context.setVariable(EmailConstants.URLS, emailRequest.getUrls());
-    context.setVariable(UserConstants.USERNAME, emailRequest.getReceiver().getUsername());
-    emailRequest.setTo(emailRequest.getReceiver().getEmail());
-    emailRequest.setSubject(emailRequest.getSubject());
-
-    if (emailRequest.getUrls().containsKey(EmailConstants.EMAIL_LINK)) {
-      context.setVariable(
-          EmailConstants.EMAIL_LINK, emailRequest.getUrls().get(EmailConstants.EMAIL_LINK));
-      LOG.info(emailRequest.getUrls().get(EmailConstants.EMAIL_LINK));
-    }
-    emailRequest.setContext(context);
 
     return emailRequest;
   }
@@ -257,7 +212,7 @@ public abstract class AbstractEmailServiceImpl implements EmailService {
    * @throws MessagingException the messaging exception
    * @throws FileNotFoundException if the file is not found
    */
-  void addAttachments(HtmlEmailRequest emailRequest, MimeMessageHelper mimeMessageHelper)
+  protected void addAttachments(HtmlEmailRequest emailRequest, MimeMessageHelper mimeMessageHelper)
       throws MessagingException, FileNotFoundException {
 
     for (File attachment : emailRequest.getAttachments()) {

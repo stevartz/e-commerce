@@ -1,9 +1,8 @@
-package com.upsidle.backend.persistent.domain.country;
+package com.upsidle.backend.persistent.domain.address;
 
 import com.jparams.verifier.tostring.NameStyle;
 import com.jparams.verifier.tostring.ToStringVerifier;
 import com.upsidle.TestUtils;
-import com.upsidle.backend.persistent.domain.state.State;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 
@@ -26,6 +25,9 @@ public class CountryTest extends TestUtils {
 
   @Test
   void testToString() {
-    ToStringVerifier.forClass(Country.class).withClassName(NameStyle.SIMPLE_NAME).verify();
+    ToStringVerifier.forClass(Country.class)
+        .withClassName(NameStyle.SIMPLE_NAME)
+        .withIgnoredFields("states")
+        .verify();
   }
 }

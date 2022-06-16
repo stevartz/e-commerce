@@ -3,7 +3,6 @@ package com.upsidle.config.security;
 import com.upsidle.config.properties.CorsConfigProperties;
 import com.upsidle.constant.SecurityConstants;
 import java.time.Duration;
-import java.util.List;
 import javax.sql.DataSource;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections.CollectionUtils;
@@ -12,7 +11,6 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpHeaders;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
@@ -107,7 +105,7 @@ public class SecurityBean {
    */
   private void setExposedHeaders(CorsConfigProperties props, CorsConfiguration corsConfig) {
     if (CollectionUtils.isEmpty(props.getExposedHeaders())) {
-      corsConfig.setExposedHeaders(List.of(HttpHeaders.AUTHORIZATION, HttpHeaders.SET_COOKIE));
+      corsConfig.setExposedHeaders(SecurityConstants.EXPOSED_HTTP_HEADERS);
     } else {
       corsConfig.setExposedHeaders(props.getExposedHeaders());
     }

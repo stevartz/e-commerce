@@ -21,6 +21,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 /**
  * The user model for the application.
@@ -65,10 +66,12 @@ public class User extends BaseEntity<Long> implements Serializable {
   private boolean accountNonLocked;
   private boolean credentialsNonExpired;
 
+  @NotAudited
   @ToString.Exclude
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
   private Set<UserRole> userRoles = new HashSet<>();
 
+  @NotAudited
   @ToString.Exclude
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
   private Set<UserHistory> userHistories = new HashSet<>();
@@ -99,19 +102,23 @@ public class User extends BaseEntity<Long> implements Serializable {
   /**
    * Add userRole to this User.
    *
-   * @param userRole userRole to be added if not already present.
+   * @param user the user
+   * @param role the role
    */
-  public void addUserRole(UserRole userRole) {
-    userRoles.add(userRole);
+  public void addUserRole(final User user, final Role role) {
+    var userRole = new UserRole(user, role);
+    userRoles.add(new UserRole(user, role));
     userRole.setUser(this);
   }
 
   /**
    * Remove userRole from this User.
    *
-   * @param userRole userRole to be removed if present.
+   * @param user the user
+   * @param role the role
    */
-  public void removeUserRole(UserRole userRole) {
+  public void removeUserRole(final User user, final Role role) {
+    var userRole = new UserRole(user, role);
     userRoles.remove(userRole);
     userRole.setUser(null);
   }

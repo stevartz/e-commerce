@@ -3,7 +3,8 @@ package com.upsidle.backend.persistent.domain.state;
 import com.jparams.verifier.tostring.NameStyle;
 import com.jparams.verifier.tostring.ToStringVerifier;
 import com.upsidle.TestUtils;
-import com.upsidle.backend.persistent.domain.country.Country;
+import com.upsidle.backend.persistent.domain.address.Country;
+import com.upsidle.backend.persistent.domain.address.State;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 
@@ -31,6 +32,9 @@ public class StateTest extends TestUtils {
 
   @Test
   void testToString() {
-    ToStringVerifier.forClass(State.class).withClassName(NameStyle.SIMPLE_NAME).verify();
+    ToStringVerifier.forClass(State.class)
+        .withClassName(NameStyle.SIMPLE_NAME)
+        .withIgnoredFields("country")
+        .verify();
   }
 }

@@ -4,7 +4,6 @@ import com.upsidle.config.security.jwt.JwtAuthTokenFilter;
 import com.upsidle.config.security.jwt.JwtAuthenticationEntryPoint;
 import com.upsidle.constant.SecurityConstants;
 import com.upsidle.enums.RoleType;
-import com.upsidle.shared.util.core.SecurityUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,6 +43,8 @@ public class ApiWebSecurityConfig {
   @Order(1)
   public SecurityFilterChain apiFilterChain(HttpSecurity http) throws Exception {
 
+    http.cors();
+
     http.exceptionHandling()
         .authenticationEntryPoint(unauthorizedHandler)
         .and()
@@ -52,9 +53,6 @@ public class ApiWebSecurityConfig {
         .and()
         .csrf()
         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-
-    // if we are running with dev profile, disable csrf and frame options to enable h2 to work.
-    SecurityUtils.configureDevEnvironmentAccess(http, environment);
 
     http.antMatcher(SecurityConstants.API_ROOT_URL_MAPPING)
         .authorizeRequests()

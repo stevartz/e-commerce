@@ -2,7 +2,6 @@ package com.upsidle.backend.service.user.impl;
 
 import com.upsidle.backend.persistent.domain.user.User;
 import com.upsidle.backend.persistent.domain.user.UserHistory;
-import com.upsidle.backend.persistent.domain.user.UserRole;
 import com.upsidle.backend.persistent.repository.UserRepository;
 import com.upsidle.backend.service.impl.UserDetailsBuilder;
 import com.upsidle.backend.service.user.RoleService;
@@ -367,7 +366,10 @@ public class UserServiceImpl implements UserService {
    * @return the userDto
    */
   private UserDto persistUser(
-      UserDto userDto, Set<RoleType> roleTypes, UserHistoryType historyType, boolean isUpdate) {
+      final UserDto userDto,
+      final Set<RoleType> roleTypes,
+      final UserHistoryType historyType,
+      final boolean isUpdate) {
 
     // If no role types are specified, then set the default role type
     var localRoleTypes = new HashSet<>(roleTypes);
@@ -378,7 +380,7 @@ public class UserServiceImpl implements UserService {
     var user = UserUtils.convertToUser(userDto);
     for (RoleType roleType : localRoleTypes) {
       var storedRole = roleService.findByName(roleType.name());
-      user.addUserRole(new UserRole(user, storedRole));
+      user.addUserRole(user, storedRole);
     }
     user.addUserHistory(new UserHistory(UUID.randomUUID().toString(), user, historyType));
 

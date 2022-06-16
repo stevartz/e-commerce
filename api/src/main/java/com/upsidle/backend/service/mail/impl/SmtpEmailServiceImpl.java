@@ -1,9 +1,10 @@
 package com.upsidle.backend.service.mail.impl;
 
+import com.upsidle.backend.service.mail.EmailService;
 import com.upsidle.config.properties.SystemProperties;
 import com.upsidle.constant.EmailConstants;
 import com.upsidle.constant.ProfileTypeConstants;
-import com.upsidle.web.payload.request.mail.EmailRequest;
+import com.upsidle.exception.InvalidServiceRequestException;
 import com.upsidle.web.payload.request.mail.HtmlEmailRequest;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
@@ -29,7 +30,7 @@ import org.thymeleaf.context.Context;
  *
  * @author Eric Opoku
  * @version 1.0
- * @see com.upsidle.backend.service.mail.EmailService
+ * @see EmailService
  * @since 1.0
  */
 @Slf4j
@@ -39,8 +40,8 @@ import org.thymeleaf.context.Context;
 public class SmtpEmailServiceImpl extends AbstractEmailServiceImpl {
 
   private final SystemProperties systemProps;
-  private final transient JavaMailSender mailSender;
-  private final transient TemplateEngine templateEngine;
+  private final JavaMailSender mailSender;
+  private final TemplateEngine templateEngine;
 
   /**
    * Sends an email with the provided simple mail message object.
@@ -48,52 +49,39 @@ public class SmtpEmailServiceImpl extends AbstractEmailServiceImpl {
    * @param simpleMailMessage the simple mail message.
    */
   @Override
-  public void sendMail(SimpleMailMessage simpleMailMessage) {
+  public void sendMail(final SimpleMailMessage simpleMailMessage) {
     LOG.info("Sending mail with content {}", simpleMailMessage);
     mailSender.send(simpleMailMessage);
     LOG.info(EmailConstants.MAIL_SUCCESS_MESSAGE);
   }
 
-  /**
-   * Sends an email with the provided EmailRequestBuilder details.
-   *
-   * @param emailRequest the email format
-   * @see EmailRequest
-   * @throws MessagingException the messaging exception
-   * @throws UnsupportedEncodingException the unsupported encoding exception
-   * @throws FileNotFoundException the file not found exception
-   */
   @Override
-  public void sendHtmlEmail(HtmlEmailRequest emailRequest)
-      throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
+  public void sendHtmlEmail(final HtmlEmailRequest emailRequest) {
+    try {
+      LOG.info("Template used is {}", templateEngine);
+      LOG.debug("Sending html email with details {}", emailRequest);
 
-    LOG.info("Template used is {}", templateEngine);
-    LOG.debug("Sending html email with details {}", emailRequest);
+      MimeMessage mimeMessage = prepareMimeMessage(emailRequest);
+      mailSender.send(mimeMessage);
 
-    MimeMessage mimeMessage = prepareMimeMessage(emailRequest);
-    mailSender.send(mimeMessage);
-
-    LOG.info(EmailConstants.MAIL_SUCCESS_MESSAGE);
+      LOG.info(EmailConstants.MAIL_SUCCESS_MESSAGE);
+    } catch (MessagingException | FileNotFoundException | UnsupportedEncodingException e) {
+      throw new InvalidServiceRequestException(e);
+    }
   }
 
-  /**
-   * Sends an email with the provided details and template for html with an attachment.
-   *
-   * @param emailRequest the email format
-   * @throws MessagingException the messaging exception
-   * @throws UnsupportedEncodingException the unsupported encoding exception
-   * @throws FileNotFoundException if the specified attachment file is not found
-   */
   @Override
-  public void sendHtmlEmailWithAttachment(HtmlEmailRequest emailRequest)
-      throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
+  public void sendHtmlEmailWithAttachment(final HtmlEmailRequest emailRequest) {
+    try {
+      LOG.info("Template used is {}", templateEngine);
+      LOG.debug("Sending html email with details {}", emailRequest);
 
-    LOG.info("Template used is {}", templateEngine);
-    LOG.debug("Sending html email with details {}", emailRequest);
+      mailSender.send(prepareMimeMessage(emailRequest));
 
-    mailSender.send(prepareMimeMessage(emailRequest));
-
-    LOG.info(EmailConstants.MAIL_SUCCESS_MESSAGE);
+      LOG.info(EmailConstants.MAIL_SUCCESS_MESSAGE);
+    } catch (MessagingException | FileNotFoundException | UnsupportedEncodingException e) {
+      throw new InvalidServiceRequestException(e);
+    }
   }
 
   /**
@@ -102,7 +90,7 @@ public class SmtpEmailServiceImpl extends AbstractEmailServiceImpl {
    * @param emailFormat the emailFormat
    * @return MimeMessage the MimeMessage
    */
-  private MimeMessage prepareMimeMessage(HtmlEmailRequest emailFormat)
+  private MimeMessage prepareMimeMessage(final HtmlEmailRequest emailFormat)
       throws MessagingException, UnsupportedEncodingException, FileNotFoundException {
 
     var context = new Context();
@@ -140,7 +128,7 @@ public class SmtpEmailServiceImpl extends AbstractEmailServiceImpl {
    * @throws UnsupportedEncodingException if there is any issue with encoding
    * @throws MessagingException if there is any exception processing the message
    */
-  private void setFromAndReplyTo(HtmlEmailRequest emailFormat, MimeMessageHelper helper)
+  private void setFromAndReplyTo(final HtmlEmailRequest emailFormat, final MimeMessageHelper helper)
       throws UnsupportedEncodingException, MessagingException {
 
     InternetAddress internetAddress;

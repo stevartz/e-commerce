@@ -14,12 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 @Slf4j
 public final class JwtUtils {
 
-  public enum JwtTokenType {
-    BAD_SIGNATURE,
-    MALFORMED,
-    UNSUPPORTED
-  }
-
   public static final int NUM_OF_JWT_PARTS = 3;
   public static final int JWT_HEADER_PART = 0;
   public static final int JWT_PAYLOAD_PART = 1;
@@ -46,24 +40,33 @@ public final class JwtUtils {
         var payload = separatedJwtToken[JWT_PAYLOAD_PART];
         var signature = separatedJwtToken[JWT_SIGNATURE_PART];
 
-        if (StringUtils.isNotBlank(header)
-            && StringUtils.isNotBlank(payload)
-            && StringUtils.isNotBlank(signature)) {
-
-          if (tokenType == JwtTokenType.BAD_SIGNATURE) {
-            return String.join(
-                DELIMITER,
-                header,
-                payload.substring(payload.length() / JWT_SIGNATURE_PART),
-                signature);
-          } else if (tokenType == JwtTokenType.MALFORMED) {
-            return String.join(DELIMITER, header, payload);
-          } else if (tokenType == JwtTokenType.UNSUPPORTED) {
-            return String.join(DELIMITER, header, payload, StringUtils.EMPTY);
-          }
-        }
+        return generateToken(tokenType, header, payload, signature);
       }
     }
     return null;
+  }
+
+  private static String generateToken(
+      JwtTokenType tokenType, String header, String payload, String signature) {
+    if (StringUtils.isNotBlank(header)
+        && StringUtils.isNotBlank(payload)
+        && StringUtils.isNotBlank(signature)) {
+
+      if (tokenType == JwtTokenType.BAD_SIGNATURE) {
+        return String.join(
+            DELIMITER, header, payload.substring(payload.length() / JWT_SIGNATURE_PART), signature);
+      } else if (tokenType == JwtTokenType.MALFORMED) {
+        return String.join(DELIMITER, header, payload);
+      } else if (tokenType == JwtTokenType.UNSUPPORTED) {
+        return String.join(DELIMITER, header, payload, StringUtils.EMPTY);
+      }
+    }
+    return null;
+  }
+
+  public enum JwtTokenType {
+    BAD_SIGNATURE,
+    MALFORMED,
+    UNSUPPORTED
   }
 }

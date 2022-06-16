@@ -1,6 +1,6 @@
-## 🎫 Ticket
+## 🎫 Ticket URL
 
-Ticket URL
+https://developersboard.atlassian.net/browse/{EC-####}
 
 ## 🚧 Code Changes
 
@@ -8,4 +8,4 @@ Ticket URL
 
 ## 📷 Screenshots
 
-(Screenshots, code examples or changes preview)
+(Screenshots, code examples, or changes preview)

@@ -11,7 +11,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.envers.Audited;
 
 /**
  * The role entity.
@@ -23,14 +22,13 @@ import org.hibernate.envers.Audited;
 @Entity
 @Getter
 @Setter
-@Audited
 @ToString
 @Cacheable
 @NoArgsConstructor
 public class Role implements Serializable {
   @Serial private static final long serialVersionUID = 7008351760784988067L;
 
-  @Id private int id;
+  @Id private Integer id;
   private String name;
 
   /**

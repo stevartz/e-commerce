@@ -1,18 +1,21 @@
-package com.upsidle.backend.persistent.domain.country;
+package com.upsidle.backend.persistent.domain.address;
 
 import com.upsidle.backend.persistent.domain.base.BaseEntity;
-import com.upsidle.backend.persistent.domain.state.State;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.envers.Audited;
 
 /**
  * The country model for the application.
@@ -24,11 +27,10 @@ import org.hibernate.envers.Audited;
 @Entity
 @Getter
 @Setter
-@Audited
 @Table(name = "countries")
 @ToString(callSuper = true)
 public class Country extends BaseEntity<Long> implements Serializable {
-  private static final long serialVersionUID = 9096210160059983754L;
+  @Serial private static final long serialVersionUID = 9096210160059983754L;
 
   @Column(unique = true, nullable = false)
   @Size(min = 2, max = 2)
@@ -39,6 +41,7 @@ public class Country extends BaseEntity<Long> implements Serializable {
   @NotBlank(message = "Country name is needed for all country entities")
   private String name;
 
+  @ToString.Exclude
   @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
   private Set<State> states = new HashSet<>();
 

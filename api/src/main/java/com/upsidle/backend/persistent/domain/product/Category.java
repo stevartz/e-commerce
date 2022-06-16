@@ -1,11 +1,14 @@
-package com.upsidle.backend.persistent.domain.category;
+package com.upsidle.backend.persistent.domain.product;
 
 import com.upsidle.backend.persistent.domain.base.BaseEntity;
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,6 +34,10 @@ public class Category extends BaseEntity<Long> implements Serializable {
   @Column(unique = true, nullable = false)
   @NotBlank(message = "Category name is required")
   private String name;
+
+  @ToString.Exclude
+  @OneToMany(mappedBy = "category")
+  private Set<Product> products = new HashSet<>();
 
   public Category(String name) {
     this.name = name;

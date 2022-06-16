@@ -43,7 +43,8 @@ class WebUtilsTest {
     var publicId = UUID.randomUUID().toString();
     String genericUri = WebUtils.getGenericUri(SignUpConstants.SIGN_UP_VERIFY_MAPPING, publicId);
 
-    var expected = String.format("%s?token=%s", SignUpConstants.SIGN_UP_VERIFY_MAPPING, publicId);
+    var expected =
+        String.format("%s?%s=%s", SignUpConstants.SIGN_UP_VERIFY_MAPPING, WebUtils.TOKEN, publicId);
     Assertions.assertEquals(expected, genericUri);
   }
 }
