@@ -49,13 +49,18 @@ public class EncryptionServiceImpl implements EncryptionService {
   private static final int ITERATION_COUNT = 65536;
   private static final int KEY_LENGTH = 256;
 
-  @Value("${encryption.secret.password}")
-  private transient String password;
-
-  @Value("${encryption.secret.salt}")
-  private transient String salt;
-
   private final transient SecureRandom RANDOM = new SecureRandom();
+
+  private final transient String password;
+  private final transient String salt;
+
+  public EncryptionServiceImpl(
+      @Value("${encryption.secret.password}") String password,
+      @Value("${encryption.secret.salt}") String salt) {
+
+    this.password = password;
+    this.salt = salt;
+  }
 
   /**
    * Encrypts the text to be sent out.

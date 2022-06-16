@@ -1,5 +1,6 @@
 package com.upsidle.shared.util;
 
+import com.upsidle.backend.persistent.domain.product.Category;
 import com.upsidle.backend.persistent.domain.product.Product;
 import com.upsidle.constant.ErrorConstants;
 import java.math.BigDecimal;
@@ -42,5 +43,23 @@ public final class ProductUtils {
     product.setActive(FAKER.bool().bool());
 
     return product;
+  }
+
+  /**
+   * creates a new product category with generated content.
+   *
+   * @return the product category
+   */
+  public static Category createCategory() {
+    return createCategory(FAKER.commerce().department());
+  }
+
+  /**
+   * creates a new product category with generated content and specified name.
+   *
+   * @return the product category
+   */
+  public static Category createCategory(String name) {
+    return new Category(name);
   }
 }

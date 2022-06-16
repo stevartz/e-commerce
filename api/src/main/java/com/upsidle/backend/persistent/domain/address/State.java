@@ -1,15 +1,19 @@
-package com.upsidle.backend.persistent.domain.state;
+package com.upsidle.backend.persistent.domain.address;
 
 import com.upsidle.backend.persistent.domain.base.BaseEntity;
-import com.upsidle.backend.persistent.domain.country.Country;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.envers.Audited;
 
 /**
  * The State model for the application.
@@ -21,18 +25,18 @@ import org.hibernate.envers.Audited;
 @Entity
 @Getter
 @Setter
-@Audited
 @Table(name = "states")
 @ToString(callSuper = true)
 public class State extends BaseEntity<Long> implements Serializable {
-  private static final long serialVersionUID = 4741179736997334897L;
+  @Serial private static final long serialVersionUID = 4741179736997334897L;
 
   @Column(unique = true, nullable = false)
   @NotBlank(message = "State name is needed for all state entities")
   private String name;
 
-  @ManyToOne
-  @JoinColumn(name = "country_id", nullable = false)
+  @ToString.Exclude
+  @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
+  @JoinColumn(nullable = false)
   private Country country;
 
   @Override

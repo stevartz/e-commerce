@@ -2,7 +2,6 @@ package com.upsidle.backend.service.mail.impl;
 
 import com.upsidle.constant.EmailConstants;
 import com.upsidle.constant.ProfileTypeConstants;
-import com.upsidle.web.payload.request.mail.EmailRequest;
 import com.upsidle.web.payload.request.mail.HtmlEmailRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;

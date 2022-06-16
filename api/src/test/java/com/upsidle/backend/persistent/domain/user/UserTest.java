@@ -35,7 +35,7 @@ class UserTest {
   @Test
   void testAddUserRole() {
     User user = UserUtils.createUser();
-    user.addUserRole(new UserRole(user, new Role(RoleType.ROLE_USER)));
+    user.addUserRole(user, new Role(RoleType.ROLE_USER));
 
     Assertions.assertFalse(user.getUserRoles().isEmpty());
   }
@@ -43,13 +43,10 @@ class UserTest {
   @Test
   void testRemoveUserRole() {
     User user = UserUtils.createUser();
-    UserRole userRole = new UserRole(user, new Role(RoleType.ROLE_USER));
-    user.addUserRole(userRole);
-
+    user.addUserRole(user, new Role(RoleType.ROLE_USER));
     Assertions.assertFalse(user.getUserRoles().isEmpty());
 
-    user.removeUserRole(userRole);
-
+    user.removeUserRole(user, new Role(RoleType.ROLE_USER));
     Assertions.assertTrue(user.getUserRoles().isEmpty());
   }
 

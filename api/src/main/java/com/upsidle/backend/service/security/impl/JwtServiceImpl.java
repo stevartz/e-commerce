@@ -36,8 +36,11 @@ public class JwtServiceImpl implements JwtService {
   private static final String TOKEN_CREATED_SUCCESS = "Token successfully created as {}";
   private static final int NUMBER_OF_DAYS_TO_EXPIRE = 1;
 
-  @Value("${jwt.secret}")
-  private transient String jwtSecret;
+  private final transient String jwtSecret;
+
+  public JwtServiceImpl(@Value("${jwt.secret}") String jwtSecret) {
+    this.jwtSecret = jwtSecret;
+  }
 
   /**
    * Generate a JwtToken for the specified username.
