@@ -14,9 +14,9 @@
     "format-api": "run-script-os",
     "format-api:windows": "cd api && gradlew.bat spotlessApply",
     "format-api:nix": "cd ./api && ./gradlew spotlessApply",
-    "format-check-api": "run-script-os",
-    "format-check-api:windows": "cd api && gradlew.bat spotlessCheck",
-    "format-check-api:nix": "cd ./api && ./gradlew spotlessCheck",
+    "check-api-format": "run-script-os",
+    "check-api-format:windows": "cd api && gradlew.bat spotlessCheck",
+    "check-api-format:nix": "cd ./api && ./gradlew spotlessCheck",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
