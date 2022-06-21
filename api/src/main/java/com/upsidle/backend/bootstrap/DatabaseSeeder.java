@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class DatabaseSeeder implements CommandLineRunner {
-  
+
   private final Environment environment;
   private final UserService userService;
   private final RoleService roleService;
