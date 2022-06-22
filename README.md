@@ -1,14 +1,13 @@
 # Upsidle
 
-<<<<<<< HEAD
 This is a springboot project for an e-commerce website.
 
-##Portals
+##Modules
 
-The project has three(3) separate portals:
+The project has three(3) separate modules:
 ###* Admin-portal
 
-  This is a frontend portal generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+  This is a frontend module generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
 
 ###* Customer-portal
@@ -21,4 +20,4 @@ The project has three(3) separate portals:
   This is the backend of the project generated with [Spring Boot 2.7.0](https://projects.spring.io/spring-boot/) - Inversion of Control Framework
 =======
 This is a springboot project for an e-commerce website.
->>>>>>> develop
+
