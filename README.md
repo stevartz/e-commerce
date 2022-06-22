@@ -1,5 +1,6 @@
 # Upsidle
 
+<<<<<<< HEAD
 This is a springboot project for an e-commerce website.
 
 ##Portals
@@ -18,3 +19,6 @@ The project has three(3) separate portals:
 ###* Api
 
   This is the backend of the project generated with [Spring Boot 2.7.0](https://projects.spring.io/spring-boot/) - Inversion of Control Framework
+=======
+This is a springboot project for an e-commerce website.
+>>>>>>> develop
