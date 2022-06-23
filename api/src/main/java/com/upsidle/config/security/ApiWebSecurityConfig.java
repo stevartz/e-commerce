@@ -2,13 +2,14 @@ package com.upsidle.config.security;
 
 import com.upsidle.config.security.jwt.JwtAuthTokenFilter;
 import com.upsidle.config.security.jwt.JwtAuthenticationEntryPoint;
+import com.upsidle.constant.AdminConstants;
 import com.upsidle.constant.SecurityConstants;
-import com.upsidle.enums.RoleType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -56,10 +57,14 @@ public class ApiWebSecurityConfig {
 
     http.antMatcher(SecurityConstants.API_ROOT_URL_MAPPING)
         .authorizeRequests()
+        .antMatchers(SecurityConstants.getPublicMatchers().toArray(new String[0]))
+        .permitAll()
+        .antMatchers(HttpMethod.POST, AdminConstants.API_V1_USERS_ROOT_URL)
+        .permitAll()
         .antMatchers(SecurityConstants.API_V1_AUTH_URL_MAPPING)
         .permitAll()
         .anyRequest()
-        .hasAuthority(RoleType.ROLE_ADMIN.getName());
+        .authenticated();
 
     http.authenticationManager(authenticationManager);
 

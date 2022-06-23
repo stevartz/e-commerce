@@ -1,5 +1,8 @@
 package com.upsidle.constant;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -56,6 +59,14 @@ public final class SecurityConstants {
           HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS,
           HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS,
           HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN);
+
+  private static final String[] PUBLIC_MATCHERS = {
+      ROOT_PATH
+  };
+
+  public static Collection<String> getPublicMatchers() {
+    return Collections.unmodifiableCollection(Arrays.asList(PUBLIC_MATCHERS));
+  }
 
   private SecurityConstants() {
     throw new AssertionError(ErrorConstants.NOT_INSTANTIABLE);
