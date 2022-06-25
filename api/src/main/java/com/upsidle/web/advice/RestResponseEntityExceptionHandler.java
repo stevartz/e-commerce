@@ -1,6 +1,7 @@
 package com.upsidle.web.advice;
 
 import com.upsidle.exception.user.UserAlreadyExistsException;
+import com.upsidle.exception.user.UserDtoNullOnCreationException;
 import com.upsidle.web.payload.pojo.ApiError;
 import java.util.ArrayList;
 import org.springframework.http.HttpHeaders;
@@ -43,7 +44,7 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
    * @param request The request object.
    * @return A ResponseEntity object.
    */
-  @ExceptionHandler(value = {UserAlreadyExistsException.class})
+  @ExceptionHandler(value = {UserAlreadyExistsException.class, UserDtoNullOnCreationException.class})
   protected ResponseEntity<Object> handleBadRequest(RuntimeException ex, WebRequest request) {
     String message = ex.getMessage();
     var error = new ApiError(HttpStatus.BAD_REQUEST, message);
