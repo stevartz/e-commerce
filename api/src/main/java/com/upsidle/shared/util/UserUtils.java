@@ -14,6 +14,7 @@ import com.upsidle.shared.dto.UserHistoryDto;
 import com.upsidle.shared.dto.mapper.UserDtoMapper;
 import com.upsidle.shared.dto.mapper.UserHistoryDtoMapper;
 import com.upsidle.shared.util.core.ValidationUtils;
+import com.upsidle.web.payload.request.SignUpRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -223,6 +224,19 @@ public final class UserUtils {
     Validate.notNull(userDetailsBuilder, "userDetailsBuilder cannot be null");
     return userDto;
   }
+
+  /**
+   * Transfers data from signUpRequest to UserDto object.
+   *
+   * @param signUpRequest stored user details
+   * @return user dto
+   */
+  public static UserDto convertToUserDto(SignUpRequest signUpRequest) {
+    var userDto = UserDtoMapper.MAPPER.toUserDto(signUpRequest);
+    Validate.notNull(signUpRequest, "signUpRequest cannot be null");
+    return userDto;
+  }
+
 
   /**
    * Transfers data from transfer object to entity.
