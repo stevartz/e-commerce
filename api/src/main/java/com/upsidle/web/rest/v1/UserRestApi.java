@@ -116,8 +116,7 @@ public class UserRestApi {
 
     userDto.setVerificationToken(token);
     // now create the user using the user service and pass the user, user.getRoles()
-    RoleType roleType = RoleType.ROLE_ADMIN.toString().equals(userDto.getRole()) ? RoleType.ROLE_ADMIN : RoleType.ROLE_USER;
-    UserDto createdUser = userService.createUser(userDto, Collections.singleton(roleType));
+    UserDto createdUser = userService.createUser(userDto, signUpRequest.getRoles());
 
     // check if the returned user is null, then you throw exception
     if(Objects.isNull(createdUser)) {
