@@ -16,6 +16,8 @@ public final class SignUpConstants {
 
   public static final String SIGN_UP_VERIFY_MAPPING = "/verify";
 
+  public static final String SERVER_REQUEST_ERROR = "There was a problem completing your request please try again later.";
+
   private SignUpConstants() {
     throw new AssertionError(ErrorConstants.NOT_INSTANTIABLE);
   }
