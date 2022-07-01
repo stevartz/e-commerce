@@ -60,9 +60,7 @@ public final class SecurityConstants {
           HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS,
           HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN);
 
-  private static final String[] PUBLIC_MATCHERS = {
-      ROOT_PATH
-  };
+  private static final String[] PUBLIC_MATCHERS = {ROOT_PATH};
 
   public static Collection<String> getPublicMatchers() {
     return Collections.unmodifiableCollection(Arrays.asList(PUBLIC_MATCHERS));

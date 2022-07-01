@@ -237,7 +237,6 @@ public final class UserUtils {
     return userDto;
   }
 
-
   /**
    * Transfers data from transfer object to entity.
    *

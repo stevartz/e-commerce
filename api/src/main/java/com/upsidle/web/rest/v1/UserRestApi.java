@@ -13,16 +13,15 @@ import com.upsidle.shared.dto.UserDto;
 import com.upsidle.shared.util.UserUtils;
 import com.upsidle.web.payload.request.SignUpRequest;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
+import java.net.URI;
+import java.util.Objects;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import javax.validation.Valid;
-import java.net.URI;
-import java.util.Objects;
 
 /**
  * This class handles all rest calls for users.
@@ -109,6 +108,7 @@ public class UserRestApi {
       LOG.warn(UserConstants.USERNAME_OR_EMAIL_EXITS);
       throw new UserAlreadyExistsException(UserConstants.USERNAME_OR_EMAIL_EXITS);
     }
+
     // otherwise, encrypt the jwt token (there is an EncryptionService)
     String encrypttoken = encryptionService.encrypt(userVerificationToken);
 
