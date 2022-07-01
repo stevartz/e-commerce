@@ -13,14 +13,6 @@ import com.upsidle.enums.UserHistoryType;
 import com.upsidle.shared.dto.UserDto;
 import com.upsidle.shared.util.UserUtils;
 import com.upsidle.shared.util.core.ValidationUtils;
-import java.time.Clock;
-import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.Validate;
@@ -31,6 +23,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.util.*;
 
 /**
  * The UserServiceImpl class provides implementation for the UserService definitions.
