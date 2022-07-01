@@ -105,11 +105,11 @@ public class UserRestApi {
     UserDto newUser = userService.createUser(userDto);
 
     // check if the returned user is null, then you throw exception
-    // otherwise, encrypt the jwt token (there is an EncryptionService)
     if (newUser == null) {
       LOG.warn(UserConstants.USERNAME_OR_EMAIL_EXITS);
       throw new UserAlreadyExistsException(UserConstants.USERNAME_OR_EMAIL_EXITS);
     }
+    // otherwise, encrypt the jwt token (there is an EncryptionService)
     String encrypttoken = encryptionService.encrypt(userVerificationToken);
 
     // encode the encrypted token (we do not want to send the raw jwt token out)
