@@ -1,0 +1,17 @@
+
+- send user details { username, email, password }: POST
+  /api/v1/users
+  GET: retrieve all users
+  GET with {id}: retrieve a single user
+  POST: creating a user
+
+  * Implementation
+    + This request to be traced
+    + We want this to not be blocked by security
+    + We will check if user already exists (exception handling in REST level)
+
+    + response object for rest api (post) ? response status code? 201 with location in header
+
+- create the user, send email with verification token
+
+- verify the token
