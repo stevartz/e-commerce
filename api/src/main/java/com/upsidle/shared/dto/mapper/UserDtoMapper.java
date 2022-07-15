@@ -3,6 +3,7 @@ package com.upsidle.shared.dto.mapper;
 import com.upsidle.backend.persistent.domain.user.User;
 import com.upsidle.backend.service.impl.UserDetailsBuilder;
 import com.upsidle.shared.dto.UserDto;
+import com.upsidle.web.payload.request.SignUpRequest;
 import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -44,12 +45,20 @@ public interface UserDtoMapper {
   List<UserDto> toUserDto(List<User> users);
 
   /**
-   * Convert and populate a userDto to User object.
+   * Convert and populate a userDto from userDetailsBuilder.
    *
    * @param userDetailsBuilder the userDetailsBuilder
    * @return the user
    */
   UserDto toUserDto(UserDetailsBuilder userDetailsBuilder);
+
+  /**
+   * Convert and populate a UserDto for SignUpRequest.
+   *
+   * @param signUpRequest the signUpRequest model.
+   * @return the userDto.
+   */
+  UserDto toUserDto(SignUpRequest signUpRequest);
 
   /**
    * Convert and populate a userDto to User object.
