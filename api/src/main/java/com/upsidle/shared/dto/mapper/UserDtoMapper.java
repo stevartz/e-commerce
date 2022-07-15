@@ -54,6 +54,7 @@ public interface UserDtoMapper {
 
   /**
    * Convert and populate a UserDto for SignUpRequest.
+   *
    * @param signUpRequest the signUpRequest model.
    * @return the userDto.
    */

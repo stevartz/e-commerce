@@ -89,7 +89,7 @@ public class UserRestApi {
     UserDto userDto = UserUtils.convertToUserDto(signUpRequest);
 
     // check user exist by username or email.
-    if(userService.existsByUsernameOrEmailAndEnabled(userDto.getUsername(), userDto.getEmail())){
+    if (userService.existsByUsernameOrEmailAndEnabled(userDto.getUsername(), userDto.getEmail())) {
       LOG.warn(UserConstants.USERNAME_OR_EMAIL_EXITS);
       throw new UserAlreadyExistsException(UserConstants.USERNAME_OR_EMAIL_EXITS);
     }
