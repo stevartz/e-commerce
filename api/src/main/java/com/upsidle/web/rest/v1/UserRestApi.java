@@ -1,19 +1,23 @@
 package com.upsidle.web.rest.v1;
 
+import com.upsidle.annotation.Loggable;
+import com.upsidle.backend.service.mail.EmailService;
+import com.upsidle.backend.service.security.JwtService;
 import com.upsidle.backend.service.user.UserService;
 import com.upsidle.constant.AdminConstants;
+import com.upsidle.constant.SecurityConstants;
 import com.upsidle.enums.OperationStatus;
 import java.util.Objects;
+
+import com.upsidle.shared.dto.UserDto;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * This class handles all rest calls for users.
@@ -26,10 +30,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(AdminConstants.API_V1_USERS_ROOT_URL)
-@PreAuthorize("isFullyAuthenticated() && hasRole(T(com.upsidle.enums.RoleType).ROLE_ADMIN)")
 public class UserRestApi {
 
   private final UserService userService;
+  private final EmailService emailService;
+  private final JwtService jwtService;
 
   /**
    * Enables the user associated with the publicId.
@@ -70,5 +75,25 @@ public class UserRestApi {
     userService.deleteUser(publicId);
 
     return ResponseEntity.ok(OperationStatus.SUCCESS);
+  }
+
+  /**
+   * Validate user when user clicks on email link.
+   *
+   * @param token The validation token.
+   * @return reponse entity
+   */
+  @Loggable
+  @SecurityRequirements
+  @GetMapping(value = SecurityConstants.EMAIL_VALIDATION)
+  public ResponseEntity<String> emailValidation(@PathVariable String token) {
+    if(jwtService.isValidJwtToken(token)) {
+      var username = jwtService.getUsernameFromToken(token);
+      UserDto userDto = userService.findByUsername(username);
+      userService.enableUser(userDto.getPublicId());
+      emailService.sendAccountConfirmationEmail(userDto);
+      return new ResponseEntity<>("User validated successfully!", HttpStatus.OK);
+    }
+    return new ResponseEntity<>("There was an issue validating the user", HttpStatus.BAD_REQUEST);
   }
 }
