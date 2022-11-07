@@ -81,7 +81,7 @@ public class UserRestApi {
    * Validate user when user clicks on email link.
    *
    * @param token The validation token.
-   * @return reponse entity
+   * @return response entity
    */
   @Loggable
   @SecurityRequirements
