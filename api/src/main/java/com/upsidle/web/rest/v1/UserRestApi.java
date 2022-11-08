@@ -7,16 +7,14 @@ import com.upsidle.backend.service.user.UserService;
 import com.upsidle.constant.AdminConstants;
 import com.upsidle.constant.SecurityConstants;
 import com.upsidle.enums.OperationStatus;
-import java.util.Objects;
-
 import com.upsidle.shared.dto.UserDto;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
+import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -87,7 +85,7 @@ public class UserRestApi {
   @SecurityRequirements
   @GetMapping(value = SecurityConstants.EMAIL_VALIDATION)
   public ResponseEntity<String> emailValidation(@PathVariable String token) {
-    if(jwtService.isValidJwtToken(token)) {
+    if (jwtService.isValidJwtToken(token)) {
       var username = jwtService.getUsernameFromToken(token);
       UserDto userDto = userService.findByUsername(username);
       userService.enableUser(userDto.getPublicId());

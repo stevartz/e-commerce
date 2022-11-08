@@ -21,47 +21,46 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @ExtendWith(MockitoExtension.class)
 class UserRestApiTest {
 
-    @Mock
-    private transient UserService userService;
+  @Mock private transient UserService userService;
 
-    @Mock
-    private transient MockMvc mockMvc;
+  @Mock private transient MockMvc mockMvc;
 
-    @Mock
-    private transient EmailService emailService;
+  @Mock private transient EmailService emailService;
 
-    @Mock
-    private transient JwtService jwtService;
+  @Mock private transient JwtService jwtService;
 
-    @InjectMocks
-    private UserRestApi userRestApi;
+  @InjectMocks private UserRestApi userRestApi;
 
-    private transient String emailValidationUri;
+  private transient String emailValidationUri;
 
-    private User user;
+  private User user;
 
-    @BeforeEach
-    void setUp() {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(userRestApi).build();
+  @BeforeEach
+  void setUp() {
+    this.mockMvc = MockMvcBuilders.standaloneSetup(userRestApi).build();
 
-        emailValidationUri = String.join("/", AdminConstants.API_V1_USERS_ROOT_URL, "/token/validate");
+    emailValidationUri = String.join("/", AdminConstants.API_V1_USERS_ROOT_URL, "/token/validate");
 
-        user = UserUtils.createUser();
-    }
+    user = UserUtils.createUser();
+  }
 
-    @Test
-    void testEmailLinkValidationReturnsBAD_REQUESTResponse() throws Exception {
-        Mockito.when(jwtService.isValidJwtToken(Mockito.anyString())).thenReturn(false);
-        mockMvc.perform(MockMvcRequestBuilders.get(emailValidationUri))
-                .andExpect(MockMvcResultMatchers.status().isBadRequest());
-    }
+  @Test
+  void testEmailLinkValidationReturnsBAD_REQUESTResponse() throws Exception {
+    Mockito.when(jwtService.isValidJwtToken(Mockito.anyString())).thenReturn(false);
+    mockMvc
+        .perform(MockMvcRequestBuilders.get(emailValidationUri))
+        .andExpect(MockMvcResultMatchers.status().isBadRequest());
+  }
 
-    @Test
-    void testEmailLinkValidationReturnsOKResponse() throws Exception {
-        Mockito.when(jwtService.isValidJwtToken(Mockito.anyString())).thenReturn(true);
-        Mockito.when(jwtService.getUsernameFromToken(Mockito.anyString())).thenReturn(user.getUsername());
-        Mockito.when(userService.findByUsername(Mockito.anyString())).thenReturn(UserUtils.convertToUserDto(user));
-        mockMvc.perform(MockMvcRequestBuilders.get(emailValidationUri))
-                .andExpect(MockMvcResultMatchers.status().isOk());
-    }
+  @Test
+  void testEmailLinkValidationReturnsOKResponse() throws Exception {
+    Mockito.when(jwtService.isValidJwtToken(Mockito.anyString())).thenReturn(true);
+    Mockito.when(jwtService.getUsernameFromToken(Mockito.anyString()))
+        .thenReturn(user.getUsername());
+    Mockito.when(userService.findByUsername(Mockito.anyString()))
+        .thenReturn(UserUtils.convertToUserDto(user));
+    mockMvc
+        .perform(MockMvcRequestBuilders.get(emailValidationUri))
+        .andExpect(MockMvcResultMatchers.status().isOk());
+  }
 }
