@@ -43,27 +43,44 @@ const SignUp: NextPage = () => {
     setConfirmPassword("");
   };
 
+  const labels: string[] = ["Username", "Email", "Password", "Confirm Pasword"];
+
   return (
     <form
       id="signup-form"
       name="signup-form"
-      className="bg-white px-8 pt-6 pb-8 mb-4 w-full sm:w-3/4 mx-auto md:ml-24"
+      className="bg-white px-8 pt-6 pb-8 mb-4 w-full sm:w-3/4 mx-auto md:ml-26"
       onSubmit={onSubmitHandler}
     >
       <div className="bg-grey-lighter min-h-screen flex flex-col">
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
             <h1 className="mb-8 text-3xl text-center">Sign up</h1>
+
+            <label
+              htmlFor="username"
+              className=" block font-bold text-s w-full placeholder-gray-gray4 px-2 pb-1  pt-1.5"
+            >
+              {labels[0]}
+            </label>
             <input
+              id="username"
               type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4"
+              className="b border border-grey-light w-full p-3 rounded mb-4"
               name="username"
               placeholder="Username"
               onChange={onChangeUsername}
               value={username}
             />
 
+            <label
+              htmlFor="email"
+              className=" block font-bold text-s w-full placeholder-gray-gray4 px-2 pb-1 pt-1.5"
+            >
+              {labels[1]}
+            </label>
             <input
+              id="email"
               type="text"
               className="block border border-grey-light w-full p-3 rounded mb-4"
               name="email"
@@ -71,8 +88,14 @@ const SignUp: NextPage = () => {
               onChange={onChangeEmail}
               value={email}
             />
-
+            <label
+              htmlFor="password"
+              className=" block font-bold text-s w-full placeholder-gray-gray4 px-2 pb-1 pt-1.5"
+            >
+              {labels[2]}
+            </label>
             <input
+              id="password"
               type="password"
               className="block border border-grey-light w-full p-3 rounded mb-4"
               name="password"
@@ -80,7 +103,14 @@ const SignUp: NextPage = () => {
               onChange={onChangePassword}
               value={password}
             />
+            <label
+              htmlFor="confirm-password"
+              className=" block font-bold text-s w-full placeholder-gray-gray4 px-2 pb-1 pt-1.5"
+            >
+              {labels[3]}
+            </label>
             <input
+              id="confirm-password"
               type="password"
               className="block border border-grey-light w-full p-3 rounded mb-4"
               name="confirm_password"
