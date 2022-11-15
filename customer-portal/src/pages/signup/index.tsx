@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { FormEvent, useState, ChangeEvent } from "react";
+import { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import { SignUpRequest } from "../../types/SignUp";
 
 const SignUp: NextPage = () => {
@@ -7,6 +7,7 @@ const SignUp: NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const onChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
@@ -15,8 +16,38 @@ const SignUp: NextPage = () => {
     setEmail(event.target.value);
   };
 
+  const validatePassWord = () => {
+    let errorMsg = "";
+
+    if (!password && !confirmPassword) {
+      errorMsg = "Enter your password";
+    } else if (!password) {
+      errorMsg =
+        confirmPassword && password !== confirmPassword
+          ? "Password and Confirm Password does not match."
+          : "";
+    } else {
+      errorMsg =
+        password && password !== confirmPassword
+          ? "Password and Confirm Password does not match."
+          : "";
+    }
+
+    // check length requirement (8 to 12 characters)
+    if (!errorMsg && (password.length < 8 || password.length > 12)) {
+      errorMsg = "Must be between 8 to 12 characters";
+    }
+    setPasswordError(errorMsg);
+  };
+
+  // validate password when password or confirm password updates
+  useEffect(() => {
+    validatePassWord();
+  }, [password, confirmPassword]);
+
   const onChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
+    const { value } = event.target;
+    setPassword(value);
   };
 
   const onChangeConfirmPassword = (event: ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +64,9 @@ const SignUp: NextPage = () => {
       password,
     };
 
+    if (passwordError) {
+      return;
+    }
     // TODO: send signup Request to BackEnd
     console.log(signUpRequest);
 
@@ -43,7 +77,12 @@ const SignUp: NextPage = () => {
     setConfirmPassword("");
   };
 
-  const labels: string[] = ["Username", "Email", "Password", "Confirm Pasword"];
+  const labels: string[] = [
+    "Username",
+    "Email",
+    "Password",
+    "Confirm Password",
+  ];
 
   return (
     <form
@@ -56,7 +95,6 @@ const SignUp: NextPage = () => {
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
             <h1 className="mb-8 text-3xl text-center">Sign up</h1>
-            {/* Username  */}
             <div className="flex flex-col">
               <label
                 htmlFor="username"
@@ -68,11 +106,11 @@ const SignUp: NextPage = () => {
                 id="username"
                 type="text"
                 required
-                className="peer first-letter:block border border-grey-light w-full p-3 rounded"
+                className="peer border focus:active:border-green-400 p-3 "
                 name="username"
                 placeholder="Username"
                 onChange={onChangeUsername}
-                // value={username}
+                value={username}
               />
               <p className="invisible peer-invalid:visible  text-xs text-red-700 mb-1 mt-0">
                 Enter your username
@@ -110,15 +148,18 @@ const SignUp: NextPage = () => {
                 id="password"
                 type="password"
                 required
-                className="peer block border border-grey-light w-full p-3 rounded"
+                className="block border border-grey-light w-full p-3 rounded"
                 name="password"
-                placeholder="Password"
+                placeholder="Must be between 8 to 12 characters"
                 onChange={onChangePassword}
                 value={password}
+                pattern="^.{8,12}$"
               />
-              <p className="invisible peer-invalid:visible  text-xs text-red-700  mb-1 mt-0">
-                Enter your password
-              </p>
+              {passwordError && (
+                <span className="text-xs text-red-800 mt-0">
+                  {passwordError}
+                </span>
+              )}
             </div>
             <div>
               <label
@@ -130,16 +171,21 @@ const SignUp: NextPage = () => {
               <input
                 id="confirm-password"
                 type="password"
-                className="peer block border border-grey-light w-full p-3 rounded"
+                className="block border border-grey-light w-full p-3 rounded"
                 name="confirm_password"
                 placeholder="Confirm Password"
                 onChange={onChangeConfirmPassword}
                 value={confirmPassword}
                 required
+                pattern="^.{8,12}$"
               />
-              <p className="invisible peer-invalid:visible  text-xs text-red-700  mb-4 mt-0">
-                Re-enter your password
-              </p>
+              {passwordError ? (
+                <span className="text-xs text-red-800 mt-0 mb-4">
+                  {passwordError}
+                </span>
+              ) : (
+                <p className="mb-4" />
+              )}
             </div>
             <button
               type="submit"
