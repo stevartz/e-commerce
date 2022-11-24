@@ -10,6 +10,7 @@ import com.upsidle.enums.OperationStatus;
 import com.upsidle.enums.TokenType;
 import com.upsidle.shared.util.core.SecurityUtils;
 import com.upsidle.web.payload.request.LoginRequest;
+import com.upsidle.web.payload.request.SignUpRequest;
 import com.upsidle.web.payload.response.JwtResponseBuilder;
 import com.upsidle.web.payload.response.LogoutResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
@@ -163,4 +164,6 @@ public class AuthRestApi {
     var accessTokenExpiration = DateUtils.addMinutes(new Date(), NUMBER_OF_MINUTES_TO_EXPIRE);
     return jwtService.generateJwtToken(username, accessTokenExpiration);
   }
+
+
 }

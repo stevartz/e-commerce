@@ -81,6 +81,7 @@ public abstract class AbstractEmailServiceImpl implements EmailService {
             EmailConstants.EMAIL_VERIFY_TEMPLATE,
             EmailConstants.CONFIRMATION_PENDING_EMAIL_SUBJECT);
     // prepare the email request then send it.
+    LOG.info(emailRequest.toString());
     sendHtmlEmail(prepareEmailRequest(emailRequest));
   }
 
@@ -145,7 +146,7 @@ public abstract class AbstractEmailServiceImpl implements EmailService {
     // get the links used in the email
     Map<String, String> links = WebUtils.getDefaultEmailUrls();
     if (StringUtils.isNotBlank(path) && StringUtils.isNotBlank(token)) {
-      links.put(EmailConstants.EMAIL_LINK, WebUtils.getGenericUri(path, token));
+      links.put(EmailConstants.EMAIL_LINK, WebUtils.getGenericUri(path + token));
     } else if (StringUtils.isNotBlank(path)) {
       links.put(EmailConstants.EMAIL_LINK, WebUtils.getGenericUri(path));
     }

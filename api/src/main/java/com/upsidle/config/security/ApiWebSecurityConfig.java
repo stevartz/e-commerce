@@ -57,9 +57,9 @@ public class ApiWebSecurityConfig {
     http.antMatcher(SecurityConstants.API_ROOT_URL_MAPPING)
         .authorizeRequests()
         .antMatchers(SecurityConstants.API_V1_AUTH_URL_MAPPING)
-        .permitAll()
-        .anyRequest()
-        .hasAuthority(RoleType.ROLE_ADMIN.getName());
+        .permitAll();
+
+
 
     http.authenticationManager(authenticationManager);
 

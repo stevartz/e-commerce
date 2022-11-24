@@ -12,9 +12,9 @@ import com.upsidle.constant.ErrorConstants;
 public final class SignUpConstants {
 
   /** URL Mapping Constants. */
-  public static final String SIGN_UP_MAPPING = "/sign-up";
+  public static final String SIGN_UP_MAPPING = "/api/v1/users/sign-up";
 
-  public static final String SIGN_UP_VERIFY_MAPPING = "/verify";
+  public static final String SIGN_UP_VERIFY_MAPPING = "/verify/";
 
   private SignUpConstants() {
     throw new AssertionError(ErrorConstants.NOT_INSTANTIABLE);
