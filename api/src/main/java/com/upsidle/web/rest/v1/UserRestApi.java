@@ -16,6 +16,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
 import org.mapstruct.ap.internal.util.Collections;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -108,7 +109,7 @@ public class UserRestApi {
   @PostMapping(value = "/register")
   public String registerUser(@RequestBody SignUpRequest signUpRequest) {
     LOG.info("starting");
-    if (signUpRequest.getUsername() != null && signUpRequest.getEmail() != null && signUpRequest.getPassword() != null) {
+    if (ObjectUtils.allNotNull(signUpRequest)) {
       LOG.info("starting 2");
       if (userService.existsByUsername(signUpRequest.getUsername())) {
         return "user already exists";
